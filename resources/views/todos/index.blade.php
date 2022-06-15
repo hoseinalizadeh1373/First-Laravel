@@ -17,7 +17,17 @@
                         @foreach($todos as $item)
                         <li class="list-group-item d-flex justify-content-between">
                           {{ $item->title }}
-                          <a href="{{ Route('todos.show',['todo'=>$item->id])}}" class="btn btn-dark btn-sm ">نمایش</a>
+                        <div>
+                            <a href="{{ Route('todos.show',['todo'=>$item->id])}}" class="btn btn-dark btn-sm ">
+                                نمایش
+                            </a>
+                            @if (!$item->done )
+                            <a href="{{ Route('todos.done',['todo'=>$item->id])}}" class="btn btn-outline-info btn-sm ">
+                                انجام شد
+                            </a>    
+                            @endif
+                            
+                        </div>
                         </li>
                         
                         @endforeach

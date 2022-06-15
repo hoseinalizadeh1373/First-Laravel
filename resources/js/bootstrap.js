@@ -10,7 +10,9 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery =require('jquery');
     require('bootstrap');
-} catch (error) {}
+} catch (error) {
+    
+}
 
 
 window.axios = require('axios');

@@ -11,6 +11,22 @@
                 <div class="card-body">
                     {{ $todo->description}}
                 </div>
+                <hr>
+                <div class=" d-flex mr-3 mb-2">
+                <a href="{{ route('todos.edit',['todo' => $todo->id]) }}" class="btn btn-sm btn-warning">
+                    ویرایش
+                </a>
+
+                <form class="mr-2" action="{{ route('todos.delete',['todo'=>$todo->id])}}" method="POST">
+                @csrf
+                @method('delete')
+                <button class="btn btn-sm btn-danger ">حذف</button>
+                     
+                
+            </form>
+
+
+                </div>
             </div>
             <div class="d-flex justify-content-center"></div>
         </div>

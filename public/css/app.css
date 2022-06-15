@@ -10973,6 +10973,7 @@ body {
   direction: rtl;
   text-align: right !important;
   font-family: "Vazir", Arial, Helvetica, sans-serif;
+  background: yellow;
 }
 
 .page-item:first-child .page-link {
