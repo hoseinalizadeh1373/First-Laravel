@@ -1,82 +1,88 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
-// use UxWeb\SweetAlert\SweetAlert;
+
+
 class TodoController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $todos = Todo::latest()->paginate(5);
 
         return view('todos.index',compact('todos'));
     }
-    public function show(Todo $todo)
-    {
-        // $todo = Todo::findorfail($id); //این خط هم رکورد با ایدی مورد نظر را سلکت میکنه و میاره
-        //و در صورت نبودن ارور 404 میده
-        return view('todos.show',compact('todo'));
-    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view ('todos.create');
+        //
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        $request->validate([
-            'title'=>'required',
-            'description'=>'required'
-        ]);
+        //
+    }
 
-        Todo::create([
-            'title' => $request->title,
-            'description' => $request->description,
-        ]);
-        alert()->success('با موفقیت ثبت شد', '');
-        // SweetAlert::message('Robots are working!');
-        return redirect()->route('todos.index');
-    }
-    public function edit(Todo $todo)
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        // $todo = Todo::findorfail($id); //این خط هم رکورد با ایدی مورد نظر را سلکت میکنه و میاره
-        //و در صورت نبودن ارور 404 میده
-        return view('todos.edit',compact('todo'));
+        //
     }
-    public function update(Request $request,Todo $todo)
-    {
-        $request->validate([
-            'title'=>'required',
-            'description'=>'required'
-        ]);
 
-        $todo->update([
-            'title' => $request->title,
-            'description' => $request->description,
-        ]);
-        alert()->success('با موفقیت ویرایش شد', '');
-        // SweetAlert::message('Robots are working!');
-        return redirect()->route('todos.index');
-        
-    }
-    public function delete(Todo $todo)
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
-        $todo->delete();
-        alert()->error('با موفقیت حذف شد', '');
-        // SweetAlert::message('Robots are working!');
-        return redirect()->route('todos.index');
-        
+        //
     }
-    public function done(Todo $todo)
-    {
-        
-        $todo->update([
-            'done' => 1
-        ]);
-        alert()->success('انجام شد', '');
-        return redirect()->route('todos.index');
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
