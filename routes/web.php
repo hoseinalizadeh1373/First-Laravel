@@ -29,6 +29,6 @@ Route::get('/todos/{todo}/done',[TodoController::class,'done'])->name('todos.don
 
 Route::resource('todos',TodoController::class);
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
