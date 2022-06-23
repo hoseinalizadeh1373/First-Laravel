@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Profile;
+use App\Models\User;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -15,8 +18,32 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Todo::latest()->paginate(5);
+        // $num = app()->make('num');
+        // $num2 = app()->make('num');
+        // dd($num,$num2);
 
+        //برای اعمال نشدن گلوبال اسکوپ
+        // $todos = Todo::withoutGlobalscope('idgir')->latest()->paginate(5);
+
+        // localscope
+        //   $todos = Todo::maxid(30)->latest()->paginate(5);
+       
+
+        /**
+         * get profile data with id from user table
+         */
+        // $user = User::find(2);
+
+        // dd($user->profile);
+
+
+        /**
+         * get user data from user_id from profile data
+         */
+
+        //  $profile = Profile::find(1);
+        //  dd($profile ->user);
+        $todos = Todo::latest()->paginate(5);
         return view('todos.index',compact('todos'));
     }
 
@@ -27,29 +54,44 @@ class TodoController extends Controller
      */
     public function create()
     {
-        //
+        return view ('todos.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required'
+        ]);
 
+        Todo::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        /**
+         * 
+         * 
+         * اگر با تابع پایین کار کنیم ، اگه
+         * آیدی .جود داشته باشه دیگه اینزرت نمیشه
+         */
+
+
+        // Todo::firstOrCreate(['id' =>'12'],[
+        //     'title'=>'tt',
+        //     'description' => $request->description,
+        // ]);
+        alert()->success('با موفقیت ثبت شد', '');
+        // SweetAlert::message('Robots are working!');
+        return redirect()->route('todos.index');
+    }
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Todo $todo)
     {
-        //
+        return view('todos.show',compact('todo'));
     }
 
     /**
@@ -58,9 +100,9 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Todo $todo)
     {
-        //
+        return view('todos.edit',compact('todo'));
     }
 
     /**
@@ -70,9 +112,20 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Todo $todo)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required'
+        ]);
+
+        $todo->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        alert()->success('با موفقیت ویرایش شد', '');
+        // SweetAlert::message('Robots are working!');
+        return redirect()->route('todos.index');
     }
 
     /**
@@ -81,8 +134,21 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($todo)
     {
-        //
+        $todo->delete();
+        alert()->error('با موفقیت حذف شد', '');
+         //SweetAlert::message('Robots are working!');
+        return redirect()->route('todos.index');
+    }
+    public function done(Todo $todo)
+    {
+        
+        $todo->update([
+            'done' => 1
+        ]);
+        alert()->success('انجام شد', '');
+        return redirect()->route('todos.index');
+
     }
 }

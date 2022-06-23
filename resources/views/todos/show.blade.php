@@ -17,7 +17,7 @@
                     ویرایش
                 </a>
 
-                <form class="mr-2" action="{{ route('todos.delete',['todo'=>$todo->id])}}" method="POST">
+                <form class="mr-2" action="{{ route('todos.destroy',['todo'=>$todo->id])}}" method="POST">
                 @csrf
                 @method('delete')
                 <button class="btn btn-sm btn-danger ">حذف</button>

@@ -180,6 +180,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\DBServiceProvider::class,
+        App\Providers\UploadServiceProvider::class,
 
     ],
 
@@ -235,6 +237,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Upload1' => App\Upload\facade\upload_facade::class,
+        'Test' =>App\FacedeTest\TestFacade::class,
       
     ],
 

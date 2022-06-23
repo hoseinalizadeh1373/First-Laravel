@@ -26,6 +26,15 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
+
+app()->singleton('num',function(){
+return rand(1,2500);
+});
+
+
+
+
+
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class

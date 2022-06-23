@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
-// use UxWeb\SweetAlert\SweetAlert;
+
 class TodoController2 extends Controller
 {
     public function index()
@@ -31,8 +31,12 @@ class TodoController2 extends Controller
             'description'=>'required'
         ]);
 
-        Todo::create([
-            'title' => $request->title,
+        // Todo::create([
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        // ]);
+        Todo::firstOrCreate(['id' =>'12'],[
+            'title'=>'tt',
             'description' => $request->description,
         ]);
         alert()->success('با موفقیت ثبت شد', '');
@@ -65,18 +69,10 @@ class TodoController2 extends Controller
     {
         $todo->delete();
         alert()->error('با موفقیت حذف شد', '');
-        // SweetAlert::message('Robots are working!');
+         //SweetAlert::message('Robots are working!');
         return redirect()->route('todos.index');
         
     }
-    public function done(Todo $todo)
-    {
-        
-        $todo->update([
-            'done' => 1
-        ]);
-        alert()->success('انجام شد', '');
-        return redirect()->route('todos.index');
 
-    }
+
 }

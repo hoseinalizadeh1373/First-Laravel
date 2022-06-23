@@ -1,4 +1,6 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300;
+
+400&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
@@ -6,7 +8,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10970,10 +10971,10 @@ a.text-dark:focus {
 }
 
 body {
-  direction: rtl;
-  text-align: right !important;
+  /* direction: rtl;
+  text-align: right !important; */
   font-family: "Vazir", Arial, Helvetica, sans-serif;
-  background: yellow;
+  background: silver
 }
 
 .page-item:first-child .page-link {
@@ -10994,5 +10995,98 @@ body {
   border-color: tomato;
   transition-delay: 3s;
   transition: all ease-in-out 5s;
+}
+
+@media (hover: hover) {
+  #creditcard {
+    /*  set start position */
+    transform: translateY(110px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  #money {
+    /*  set start position */
+    transform: translateY(180px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  button:hover #creditcard {
+    transform: translateY(0px);
+    transition: transform 0.2s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+
+  button:hover #money {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.25rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.25rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button:hover .button__text span {
+  transform: translateY(-0.25rem);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* styling */
+
+
+
+.button {
+  border: none;
+  outline: none;
+  background-color: purple;
+  padding: 1rem 90px 1rem 2rem;
+  position: relative;
+  border-radius: 8px;
+  letter-spacing: 0.7px;
+  background-color: #5086bd;
+  color: #fff;
+  font-size: 21px;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button__svg {
+  position: absolute;
+  overflow: visible;
+  bottom: 6px;
+  right: 0.2rem;
+  height: 140%;
 }
 

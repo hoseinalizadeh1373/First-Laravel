@@ -21,6 +21,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/todos/{todo}/edit',[TodoController::class,'edit'])->name('todos.edit');
 // Route::put('/todos/{todo}',[TodoController::class,'update'])->name('todos.update');
 // Route::delete('/todos/{todo}',[TodoController::class,'delete'])->name('todos.delete');
+// Route::get('/',function(){
+// // return Test::saybye();
+// return view('welcome');
+// });
 Route::get('/todos/{todo}/done',[TodoController::class,'done'])->name('todos.done');
 
 Route::resource('todos',TodoController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
