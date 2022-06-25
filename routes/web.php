@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\TodoController;
+use App\Models\Todo;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +35,30 @@ Route::resource('todos',TodoController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::post('/confirm-password', function () {
+    return view('auth.passwords.confirm');
+})->middleware('auth')->name('password.confirm');
+ 
+Route::post('/confirm-password', function (Request $request) {
+    if (! Hash::check($request->password, $request->user()->password)) {
+        return back()->withErrors([
+            'password' => ['The provided password does not match our records.']
+        ]);
+    }
+ 
+    $request->session()->passwordConfirmed();
+ 
+    return redirect()->intended();
+})->middleware(['auth', 'throttle:6,1']);
+
+Route::get('/settings/security',function(){
+    return 'hello';
+    })->middleware(['password.confirm']);
+
+    // Route::put('/todos/{todo}',function(Todo $todo){
+
+    // })->middleware('can:update,post'); همان کار authorized میکند
+    
