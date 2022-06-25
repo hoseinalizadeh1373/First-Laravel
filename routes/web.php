@@ -32,8 +32,9 @@ Route::get('/todos/{todo}/done',[TodoController::class,'done'])->name('todos.don
 
 Route::resource('todos',TodoController::class);
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
+<<<<<<< HEAD
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
@@ -62,3 +63,6 @@ Route::get('/settings/security',function(){
 
     // })->middleware('can:update,post'); همان کار authorized میکند
     
+=======
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+>>>>>>> df5c3feaf65041bd66bbdb187cbf1af344a27cf6
