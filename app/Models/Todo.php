@@ -15,6 +15,11 @@ class Todo extends Model
     // protected $gaurded = ['title'];//اجازه نمیدهیم ایم فیلدها ذخیره شوند
 
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     /**
      *global scope  
      */

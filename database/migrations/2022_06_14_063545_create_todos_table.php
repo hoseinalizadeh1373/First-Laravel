@@ -18,6 +18,10 @@ class CreateTodosTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->boolean('done')->default(0);
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
+
             $table->timestamps();
         });
     }
