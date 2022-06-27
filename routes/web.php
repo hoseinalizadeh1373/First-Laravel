@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\UserController;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -34,7 +35,7 @@ Route::resource('todos',TodoController::class);
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/todos', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -63,4 +64,5 @@ Route::get('/settings/security',function(){
     // })->middleware('can:update,post'); همان کار authorized میکند
     
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+Route::resource('users',UserController::class);
 

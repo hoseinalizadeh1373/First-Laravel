@@ -16,6 +16,11 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+        $this->middleware('auth',['only'=>['index']]);
+     }
     public function index()
     {
         // $num = app()->make('num');
@@ -43,6 +48,7 @@ class TodoController extends Controller
 
         //  $profile = Profile::find(1);
         //  dd($profile ->user);
+       
         $todos = Todo::latest()->paginate(5);
         return view('todos.index',compact('todos'));
     }

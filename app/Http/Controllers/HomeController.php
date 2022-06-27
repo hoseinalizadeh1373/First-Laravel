@@ -45,10 +45,10 @@ class HomeController extends Controller
         // $allow = Gate::forUser(User::find(1))->allows('GetTodo',$todo); // for user 
         // dd($user->can('GetTodo',$todo));
 
-        $this->authorize('update',$todo);
+        // $this->authorize('update',$todo);
 
         // dd($allow);
 
-        return view('home');
+        return redirect()->route('todos.index');
     }
 }
