@@ -129,13 +129,19 @@
                                         @enderror
                                     </div>
                                 </div>
+                            <div class="form-group row">
+                            <label for="password-confirm" class="col-sm-4 col-form-label text-md-end">{{ __('تکرار رمز عبور') }}</label>
+                            <div class="col-sm-8">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  required autocomplete="new-password">
+                            </div>
+                            </div>
 
-
-                                <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                                </div>
-
-                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+                             
+                                <button type="submit" class="btn btn-warning btn-block   text-body mx-auto">
+                                    {{ __('عضویت') }}
+                                </button>
+                        
+                                <p class="text-center text-muted mt-5 mb-0">عضوی ؟ <a href="{{Route('login')}}" class="fw-bold text-body"><u>ورود کنید</u></a></p>
 
                             </form>
 
