@@ -75,16 +75,16 @@
     </div>
 </div> -->
 
-<section class="vh-100 fixed-top">
+<section class="vh-90 my-2  ">
     <div class="mask d-flex align-items-center h-100 ">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-9 col-xl-6 ">
+                <div class="col-8 col-md-7 col-lg-7 col-xl-4 ">
                     <div class="card " style="border-radius: 15px;">
                         <!-- <div class=" card-body p-5 back-img">
 
                         </div> -->
-                        <img src="/img/pngwing.png" width="50%" class="mx-auto" height="250px" alt="">
+                        <img src="/img/pngwing.png" width="30%" class="mx-auto" height="250px" alt="">
                         <div class="card-body p-5 ">
 
                             <h2 class="text-uppercase text-center mb-5 ">حسابت رو بساز</h2>

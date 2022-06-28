@@ -1,6 +1,6 @@
 <script src="{{ asset('/js/app.js')}}"></script>
 @include('sweet::alert')
-<script>
+<script >
 
     // let del = document.getElementsByClassName('positioner');
     // for (let i = 0; i < del.length; i++) {
@@ -21,7 +21,23 @@
     //         })
     //     }
     // }
-    let a =0;
+    var id = 0;
+    let form = document.getElementById('formusers');
+   
+    let s ="";
+function setid(id2){
+    
+id = id2;
+form.action = "{{Route('users.update',['user' => 1])}}";
+// form.action = ss.replace("888888888",id);
+}
+
+function getid(){
+
+    alert(id+" ");
+// alert(form.action);
+// form.submit(); 
+}
     
 </script>
 </body>

@@ -1,10 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
-
-
-
-
 <div class="container rounded mt-2">
 <div class="row border rounded">
 	<div class="col-lg-12">
@@ -47,8 +42,8 @@
 									</span>
 								</a>
 								<a data-toggle="modal" data-target="#exampleModal" class="table-link warning border  rounded bg-light px-1">
-                              <i class="fas fa-pen-alt" onclick="a='{{$item->id}}'"></i>
-							  {{$userid = $item->id;}}
+                              <i class="fas fa-pen-alt" onclick="{{$userid =  $item->id}})"></i>
+							
 								</a>
 							
 								<a href="#"  class="table-link positioner warning  border  rounded bg-light px-1">
@@ -81,17 +76,17 @@
       </div>
       <div class="modal-body">
 		<div class="d-flex justify-content-between">
-			{{$userid}}
-			<!-- <form action="{{Route('users.update',['user'=>$item->id])}}" method="post">
+			
+		    <form action="{{Route('users.update',['user' => $userid])}}" id="formusers" method="post" >
 				@csrf
 				@method('put')
-			<button class="btn-sm bg-light  border rounded ">
+			<button class="btn-sm bg-light  border rounded " name="toAdmin" value="2" type="submit">
 				تغییر وضعیت به ادمین
 			</button>
-			<button class="btn-sm bg-light border rounded">
+			<button class="btn-sm bg-light border rounded "  name="toUser" value="1" type="submit">
             تغییر وضعیت به کاربر عادی
 			</button>
-			</form> -->
+			</form> 
 		</div>
       </div>
       <div class="modal-footer">

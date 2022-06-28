@@ -83,7 +83,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id);
+        if(isset($request->toUser)){
+            dd('yes');
+        }
+        else dd('no');
     }
 
     /**
