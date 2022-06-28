@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,9 +73,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<section class="vh-100 ">
+<section class="vh-100 fixed-top">
     <div class="mask d-flex align-items-center h-100 ">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">

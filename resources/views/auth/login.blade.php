@@ -70,7 +70,7 @@
         </div>
     </div>
 </div> -->
-<section class="vh-100 pt-2" style="background-color: #9A616D;">
+<section class="vh-100 pt-2" >
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">

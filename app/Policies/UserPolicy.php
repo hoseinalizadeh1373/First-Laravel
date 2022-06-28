@@ -2,11 +2,10 @@
 
 namespace App\Policies;
 
-use App\Models\Todo;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TodoPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
@@ -18,19 +17,19 @@ class TodoPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\=Todo  $=Todo
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Todo $todo)
+    public function view(User $user, User $model)
     {
-        return $user->type == "admin";
+        //
     }
 
     /**
@@ -41,37 +40,32 @@ class TodoPolicy
      */
     public function create(User $user)
     {
-        // dd($user->type);
-        
-        return equalTo($user->type ,"admin");
-        
+        //
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\=Todo  $=Todo
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Todo $todo)
+    public function update(User $user,User $model)
     {
-        if($user->id > 0){
+        if($user->type =='admin'){
             return true;
         }
-        return false ;
-        // return equalTo($user->type ,"user");
-                    
+        return false;
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\=Todo  $=Todo
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Todo $todo)
+    public function delete(User $user, User $model)
     {
         //
     }
@@ -80,10 +74,10 @@ class TodoPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\=Todo  $=Todo
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Todo $todo)
+    public function restore(User $user, User $model)
     {
         //
     }
@@ -92,10 +86,10 @@ class TodoPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\=Todo  $=Todo
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Todo $todo)
+    public function forceDelete(User $user, User $model)
     {
         //
     }

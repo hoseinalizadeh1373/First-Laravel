@@ -40,15 +40,18 @@ class HomeController extends Controller
 
         $todo = Todo::find(2);
 
-        // $allow = Gate::allows('GetTodo',$todo);
+        // $allow = Gate::allows('update',$todo);
         // $allow = Gate::denies('GetTodo',$todo); برعکس میکنه
         // $allow = Gate::forUser(User::find(1))->allows('GetTodo',$todo); // for user 
         // dd($user->can('GetTodo',$todo));
 
-        // $this->authorize('update',$todo);
+        // $allow =Gate::allows('update');
+        $allow = $this->authorize('update',$todo);
+        dd($allow);
 
-        // dd($allow);
+        // return redirect()->route('todos.index');
 
-        return redirect()->route('todos.index');
+
+
     }
 }
