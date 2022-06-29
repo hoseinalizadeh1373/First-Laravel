@@ -1,44 +1,19 @@
 <script src="{{ asset('/js/app.js')}}"></script>
 @include('sweet::alert')
-<script >
-
-    // let del = document.getElementsByClassName('positioner');
-    // for (let i = 0; i < del.length; i++) {
-    //     del[i].addEventListener('click', (e) => {
-
-    //         document.getElementById("hid").value = hidden1[i].value;
-    //         // e.preventDefault();
-    //         console.log(hidden1[i].value);
-
-    //     });
-
-    //     function modal() {
-
-
-    //         $('#myModal').on('shown.bs.modal', function() {
-    //             $('#myInput').trigger('focus')
-
-    //         })
-    //     }
-    // }
-    var id = 0;
+<script type="text/javascript">
+    let pen = document.getElementsByClassName('editpen');
+    let idd = 0;
+    for(let i=0;i<pen.length;i++){
+        pen[i].addEventListener('click',function(e){
+            idd = pen[i].value;
+        })
+    }
     let form = document.getElementById('formusers');
-   
-    let s ="";
-function setid(id2){
-    
-id = id2;
-form.action = "{{Route('users.update',['user' => 1])}}";
-// form.action = ss.replace("888888888",id);
-}
-
-function getid(){
-
-    alert(id+" ");
-// alert(form.action);
-// form.submit(); 
-}
-    
+    form.addEventListener('submit',function(){
+        let s  = "{{Route('users.update',['user'=>88888888888])}}";
+    form.action = s.replace('88888888888',idd);
+    form.submit();
+    });
 </script>
 </body>
 

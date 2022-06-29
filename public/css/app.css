@@ -10974,7 +10974,7 @@ body {
   /* direction: rtl;
   text-align: right !important; */
   font-family: "Vazir", Arial, Helvetica, sans-serif;
-  background-color: #1C0A00;
+  background-color: #D3CEDF;
 }
 
 .page-item:first-child .page-link {
@@ -11172,15 +11172,18 @@ height: 100%;
 }
 .table tbody > tr > td {
 	font-size: 0.875em;
-	background: #6B4F4F;
+	background: #F2D7D9;
 	border-top: 10px solid #fff;
 	vertical-align: middle;
-  color: #000;
-  background: wheat;
+  color: #d4edda;
+  background: #748DA6;
 	padding: 1px 2px;
 }
+.coloe{
+  background: #F2D7D9;
+}
 .table a{
-  color: #491217;
+  color: #d4edda;
   text-decoration: none;
 }
 .table tbody > tr > td:first-child,
@@ -11250,4 +11253,86 @@ height: 100%;
 }
 
 
+.modal2{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content/Box */
+.modal2-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal2-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Body */
+.modal2-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal2-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Content */
+.modal2-content {
+  position: relative;
+  background-color: #ffeeba;
+  margin: auto;
+  padding: 5px;
+  border: 5px solid transparent;
+  margin-top: 20px;
+  text-align: right;
+  vertical-align: middle;
+  border-radius: 20px;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}

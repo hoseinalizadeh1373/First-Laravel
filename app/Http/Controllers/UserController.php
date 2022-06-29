@@ -15,6 +15,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+      
+      
+
+    //  public static function setid($idd)
+    //  {
+    //     $idid = $idd;
+    //  }
+
     public function index()
     {
         $user = auth()->user();
@@ -25,8 +34,8 @@ class UserController extends Controller
         
 
         $list_user = User::latest()->paginate(3);
-        
-        return view('user.userlist',compact('list_user'));
+        $useridd =0;
+        return view('user.userlist',compact('list_user','useridd'));
     }
 
     /**
@@ -84,7 +93,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         if(isset($request->toUser)){
-            dd('yes');
+            dd($id);
         }
         else dd('no');
     }
@@ -95,8 +104,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, User $user)
     {
-        //
+        dd($request->idf);
+        dd($user->id);
     }
 }
