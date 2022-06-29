@@ -13,7 +13,7 @@
 								<!-- <th><span>Created</span></th> -->
 								<th class="text-center"><span>دسترسی</span></th>
 								<th><span>پست الکترونیک</span></th>
-								<th>&nbsp;</th>
+								<th><span>عملیات</span></th>
 							</tr>
 						</thead>
 						<tbody class="text-center pt-1">
@@ -41,7 +41,7 @@
 										<i class="fas fa-pen-alt fa-sm cursor-pointer" ></i>
 									</button>
 
-									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark fa-sm cursor-pointer" value="{{$item->id}}">
+									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen" value="{{$item->id}}">
 										<i class="fas fa-trash-alt fa-sm cursor-pointer"  ></i>
 									</button>
 								</td>
@@ -57,17 +57,20 @@
 </div>
 <div class="d-flex justify-content-center mt-2">{{ $list_user -> links()}}</div>
 
-<div id="myModal2" class="modal2">
+<div id="myModal2" class="modal2 ">
   <!-- Modal content -->
-  <div class="modal2-content">
-    <span class="close"><i class="fas fa-times-circle"></i></span>
-    <p> آیا از حذف این کاربر مطمئن هستید ؟</p>
-	<form action="{{Route('users.destroy',['user' => $useridd])}}" method="post">
+  <div class="modal2-content row">
+    <span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
+    <p class="col-sm-6 my-3"> آیا از حذف این کاربر مطمئن هستید ؟</p>
+	<div class="col-md-4 d-flex align-items-center  my-2">
+	<form id="formdelete" action="{{Route('users.destroy',['user' => $useridd])}}" method="post" >
 		@csrf
 		@method('delete')
-		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" value="{{$useridd}}"> انجام بده {{$useridd}}</button>
+		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button>
+		
 	</form>
-	<button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button>
+	<button class="btn btn-md text-warning bg-dark border rounded" onclick="closedelete()" type="cancel">انصراف</button>
+	</div>
   </div>
 </div>
 

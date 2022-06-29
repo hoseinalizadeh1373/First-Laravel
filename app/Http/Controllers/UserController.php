@@ -106,7 +106,6 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
-        dd($request->idf);
         dd($user->id);
     }
 }

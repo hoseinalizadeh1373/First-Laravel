@@ -11254,6 +11254,7 @@ height: 100%;
 
 
 .modal2{
+  direction: rtl;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -11270,10 +11271,9 @@ height: 100%;
 .modal2-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  
+  padding: 10px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 100%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -11318,7 +11318,7 @@ height: 100%;
   text-align: right;
   vertical-align: middle;
   border-radius: 20px;
-  width: 80%;
+  width: 50%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
