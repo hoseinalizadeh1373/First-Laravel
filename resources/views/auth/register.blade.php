@@ -1,15 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
+<<<<<<< HEAD
 <section class="vh-90 my-2  ">
     <div class="mask d-flex align-items-center h-100 ">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-8 col-md-7 col-lg-9 col-xl-6 ">
+=======
+<section class="vh-90 my-2 ">
+    <div class="mask d-flex align-items-center h-100 ">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-8 col-md-7 col-lg-12 col-xl-6 ">
+>>>>>>> 7b73de6b0bb1bd166f68dd5964d37f7bdb5db755
                     <div class="card " style="border-radius: 15px;">
-                        <!-- <div class=" card-body p-5 back-img">
-
-                        </div> -->
+                        
                         <img src="/img/pngwing.png" width="30%" class="mx-auto" height="250px" alt="">
                         <div class="card-body p-5 ">
 
