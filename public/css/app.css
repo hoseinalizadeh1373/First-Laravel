@@ -10970,14 +10970,15 @@ a.text-dark:focus {
   background: #2bb6a3;
 }
 
-.dd {
+.premission {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
-  color: red;
+  color: teal;
   border: 2px solid transparent;
   border-radius: 20px;
 }
+
 .page-item:first-child .page-link {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

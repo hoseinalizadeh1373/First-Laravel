@@ -65,6 +65,6 @@ Route::post('/confirm-password', function (Request $request) {
 
 // })->middleware('can:update,post'); همان کار authorized میکند
 Route::get('/', [TodoController::class, 'index'])->middleware('verified');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::resource('users', UserController::class);

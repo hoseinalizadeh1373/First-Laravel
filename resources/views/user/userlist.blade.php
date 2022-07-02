@@ -57,6 +57,8 @@
 </div>
 <div class="d-flex justify-content-center mt-2">{{ $list_user -> links()}}</div>
 
+
+
 <div id="myModal2" class="modal2">
   <!-- Modal content -->
   <div class="modal2-content">
@@ -71,7 +73,6 @@
 	<button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button>
   </div>
 </div>
-
 <!-- Modal -->
 @include('layouts.modal_edit')
 
