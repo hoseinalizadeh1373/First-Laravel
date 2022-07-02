@@ -48,8 +48,8 @@ class TodoController extends Controller
 
         //  $profile = Profile::find(1);
         //  dd($profile ->user);
-       
-        $todos = Todo::latest()->paginate(5);
+    //    dd()
+        $todos = Todo::where('user_id','=',auth()->user()->id)->latest()->paginate(5);
         return view('todos.index',compact('todos'));
     }
 
@@ -72,6 +72,7 @@ class TodoController extends Controller
         Todo::create([
             'title' => $request->title,
             'description' => $request->description,
+            'user_id' => auth()->user()->id
         ]);
         /**
          * 

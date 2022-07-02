@@ -47,7 +47,7 @@ class HomeController extends Controller
 
         // $allow =Gate::allows('update');
         $allow = $this->authorize('update',$todo);
-        dd($allow);
+        // dd($allow);
 
         // return redirect()->route('todos.index');
 

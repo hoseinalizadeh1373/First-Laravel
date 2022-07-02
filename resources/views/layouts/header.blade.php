@@ -26,7 +26,7 @@
         <a class="nav-link" href="{{Route('todos.index')}}">صفحه اصلی <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">کاربران</a>
+        <a class="nav-link" href="{{Route('users.index')}}">کاربران</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="#">درباره ما</a>

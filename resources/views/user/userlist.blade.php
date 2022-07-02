@@ -67,6 +67,7 @@
 		@method('delete')
 		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" value="{{$useridd}}"> انجام بده {{$useridd}}</button>
 	</form>
+	
 	<button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button>
   </div>
 </div>

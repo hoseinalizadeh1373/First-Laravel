@@ -11,7 +11,7 @@ class Todo extends Model
 
     // protected $table = 'todos'; // نام جدول را به مدل می دهیم ، می توانیم بگیم به این مدل 
     //جدولش یه چیز دیگه باشه
-    protected $fillable =['title','description','done']; // اجازه میدیم که این فیلدها ذخیره شوند
+    protected $fillable =['title','description','done','user_id']; // اجازه میدیم که این فیلدها ذخیره شوند
     // protected $gaurded = ['title'];//اجازه نمیدهیم ایم فیلدها ذخیره شوند
 
 
