@@ -57,13 +57,8 @@
 </div>
 <div class="d-flex justify-content-center mt-2">{{ $list_user -> links()}}</div>
 
-<<<<<<< HEAD
-
-
-<div id="myModal2" class="modal2">
-=======
 <div id="myModal2" class="modal2 ">
->>>>>>> 7b73de6b0bb1bd166f68dd5964d37f7bdb5db755
+
   <!-- Modal content -->
   <div class="modal2-content row">
     <span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
@@ -75,15 +70,18 @@
 		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button>
 		
 	</form>
-<<<<<<< HEAD
+
 	
-	<button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button>
-=======
+	<!-- <button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button> -->
+
 	<button class="btn btn-md text-warning bg-dark border rounded" onclick="closedelete()" type="cancel">انصراف</button>
 	</div>
->>>>>>> 7b73de6b0bb1bd166f68dd5964d37f7bdb5db755
+
   </div>
 </div>
+<!-- <form action="{{Route('todos.show',['todo' =>1])}}" method='get'> -->
+
+<!-- </form> -->
 <!-- Modal -->
 @include('layouts.modal_edit')
 

@@ -106,6 +106,10 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
-        dd($user->id);
+        // dd($user->id);
+        if($request->type()=='admin'){
+            User::delete($user);
+            
+        }
     }
 }

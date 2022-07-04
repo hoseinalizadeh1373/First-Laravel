@@ -11270,22 +11270,22 @@ a.text-dark:focus {
   color: #ffc107;
 }
 
-<<<<<<< HEAD
+
 .modal2 {
   display: none;
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
   z-index: 1;
-  /* Sit on top */
-=======
+}  
+
 
 .modal2{
   direction: rtl;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
->>>>>>> 7b73de6b0bb1bd166f68dd5964d37f7bdb5db755
+
   left: 0;
   top: 0;
   width: 100%;
@@ -11304,19 +11304,19 @@ a.text-dark:focus {
 
 .modal2-content {
   background-color: #fefefe;
-<<<<<<< HEAD
+
   margin: 15% auto;
   /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
   /* Could be more or less, depending on screen size */
-=======
+
   margin: 15% auto; /* 15% from the top and centered */
   padding: 10px;
   border: 1px solid #888;
   width: 100%; /* Could be more or less, depending on screen size */
->>>>>>> 7b73de6b0bb1bd166f68dd5964d37f7bdb5db755
+
 }
 
 /* The Close Button */
