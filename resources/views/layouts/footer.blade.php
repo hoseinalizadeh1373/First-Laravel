@@ -28,7 +28,27 @@
     form2.action = s.replace('88888888888',idd);
     form2.submit();
     });
+
+    function gettodo(){
+axios.get('/todos?todo=1')
+  .then(function (response) {
+    
+    
+  })
+  .catch(function (error) {
+    // handle error
+    alert(error);
+  })
+  .then(function () {
+    // always executed
+  });
+
+}
+
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script
 </body>
 
 </html>
