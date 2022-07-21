@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
-{{$useridd}}
-<div class="container rounded mt-2">
+
+<div class="container  rounded mt-2">
 	<div class="row border rounded">
 		<div class="col-lg-12">
 			<div class="">
@@ -64,12 +64,12 @@
     <span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
     <p class="col-sm-6 my-3"> آیا از حذف این کاربر مطمئن هستید ؟</p>
 	<div class="col-md-4 d-flex align-items-center  my-2">
-	<form id="formdelete" action="{{Route('users.destroy',['user' => $useridd])}}" method="post" >
+	<!-- <form id="formdelete" action="{{Route('users.destroy',['user' => $useridd])}}" method="post" >
 		@csrf
-		@method('delete')
-		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button>
-		
-	</form>
+		@method('delete') -->
+		<!-- <button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
+		<button  class="bg-dark text-warning btn btn-md border rounded" onclick="deleteaxios()" type="submit" > انجام بده </button>
+	<!-- </form> -->
 
 	
 	<!-- <button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button> -->

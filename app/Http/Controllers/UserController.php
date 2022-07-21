@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -67,7 +67,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -106,10 +106,10 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
-        // dd($user->id);
-        if($request->type()=='admin'){
-            User::delete($user);
-            
+        dd($user->id);
+        
+        if(auth()->user()->type=='admin'){
+             $user->delete();
         }
     }
 }

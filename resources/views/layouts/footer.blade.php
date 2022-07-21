@@ -1,4 +1,7 @@
 <script src="{{ asset('/js/app.js')}}"></script>
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @include('sweet::alert')
 <script type="text/javascript">
     let pen = document.getElementsByClassName('editpen');
@@ -29,11 +32,12 @@
     form2.submit();
     });
 
+
+    
+
     function gettodo(){
 axios.get('/todos?todo=1')
-  .then(function (response) {
-    
-    
+  .then(function (response) {   
   })
   .catch(function (error) {
     // handle error
@@ -44,11 +48,22 @@ axios.get('/todos?todo=1')
   });
 
 }
+function deleteaxios(){
+axios.delete('/users/8')
+.then(function (response){
+ 
+}
+.catch(function (error) {
+    // handle error
+    alert(error);
+  })
+  .then(function () {
+  });
+}
 
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script
+
 </body>
 
 </html>
