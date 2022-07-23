@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       
+       dd(User::all());
     }
 
     /**
@@ -106,7 +106,7 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
-        dd($user->id);
+        //dd($user->id);
         
         if(auth()->user()->type=='admin'){
              $user->delete();

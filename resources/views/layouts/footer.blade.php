@@ -26,9 +26,11 @@
     form.action = s.replace('88888888888',idd);
     form.submit();
     });
-    form2.addEventListener('submit',function(){
-        let s  = "{{Route('users.destroy',['user'=>88888888888])}}";
-    form2.action = s.replace('88888888888',idd);
+    form2.addEventListener('submit',function(e){
+      e.preventDefault();
+      deleteaxios(idd);
+    //     let s  = "{{Route('users.destroy',['user'=>88888888888])}}";
+    // form2.action = s.replace('88888888888',idd);
     form2.submit();
     });
 
@@ -49,10 +51,10 @@ axios.get('/todos?todo=1')
 
 }
 function deleteaxios(){
-axios.delete('/users/8')
+axios.delete('/users/'+idd)
 .then(function (response){
- 
-}
+  (response)=>response.json({success:true});
+})
 .catch(function (error) {
     // handle error
     alert(error);
@@ -61,7 +63,34 @@ axios.delete('/users/8')
   });
 }
 
+var modal = document.getElementById('myModal2');
 
+// Get the button that opens the modal
+var btn = document.getElementsByClassName("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+for(let i=0;i<btn.length;i++){
+btn[i].addEventListener('click',function() {
+  modal.style.display = "block";
+})
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+function closedelete(){
+    modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
 
 </body>

@@ -64,10 +64,10 @@
     <span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
     <p class="col-sm-6 my-3"> آیا از حذف این کاربر مطمئن هستید ؟</p>
 	<div class="col-md-4 d-flex align-items-center  my-2">
-	<!-- <form id="formdelete" action="{{Route('users.destroy',['user' => $useridd])}}" method="post" >
+	<!-- action="{{Route('users.destroy',['user' => $useridd])}}" -->
+ <!-- <form id="formdelete" action="{{Route('users.index')}}" method="post" >
 		@csrf
-		@method('delete') -->
-		<!-- <button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
+		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
 		<button  class="bg-dark text-warning btn btn-md border rounded" onclick="deleteaxios()" type="submit" > انجام بده </button>
 	<!-- </form> -->
 
