@@ -68,3 +68,4 @@ Route::get('/', [TodoController::class, 'index'])->middleware('verified');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::resource('users', UserController::class);
+Route::get('/users/changelist',[UserController::class,'changelist']);

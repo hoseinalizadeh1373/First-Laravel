@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="container  rounded mt-2">
+<div class="container rounded mt-2" id='tbody'>
 	<div class="row border rounded">
 		<div class="col-lg-12">
 			<div class="">
@@ -16,9 +16,9 @@
 								<th><span>عملیات</span></th>
 							</tr>
 						</thead>
-						<tbody class="text-center pt-1">
+						<tbody class="text-center pt-1" >
 							@foreach($list_user as $item)
-							<tr>
+							<tr id='tr_{{$item->id}}'>
 								<td>
 
 									<a href="#" class="user-link">{{$item->name}}</a>
@@ -55,7 +55,9 @@
 		</div>
 	</div>
 </div>
-<div class="d-flex justify-content-center mt-2">{{ $list_user -> links()}}</div>
+
+<div class="d-flex justify-content-center mt-2  " id="pagination">{{ $list_user -> links()}}</div>
+<hr class='d-block'>
 
 <div id="myModal2" class="modal2 ">
 
@@ -64,10 +66,10 @@
     <span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
     <p class="col-sm-6 my-3"> آیا از حذف این کاربر مطمئن هستید ؟</p>
 	<div class="col-md-4 d-flex align-items-center  my-2">
-	<!-- <form id="formdelete" action="{{Route('users.destroy',['user' => $useridd])}}" method="post" >
+	<!-- action="{{Route('users.destroy',['user' => $useridd])}}" -->
+ <!-- <form id="formdelete" action="{{Route('users.index')}}" method="post" >
 		@csrf
-		@method('delete') -->
-		<!-- <button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
+		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
 		<button  class="bg-dark text-warning btn btn-md border rounded" onclick="deleteaxios()" type="submit" > انجام بده </button>
 	<!-- </form> -->
 

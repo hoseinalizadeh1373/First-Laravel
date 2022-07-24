@@ -124,7 +124,6 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: calc(1.2825rem + 0.39vw);
-  background: red;
 }
 @media (min-width: 1200px) {
   h3, .h3 {
@@ -10660,7 +10659,4 @@ textarea.form-control-lg {
     top: 0;
     opacity: 1;
   }
-}
-.hello{
-  background: red;
 }

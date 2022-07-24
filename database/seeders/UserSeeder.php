@@ -17,11 +17,19 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        for($i=11;$i<25;$i++){
        User::create([
-           'type' =>'admin',
-           'name' =>'hosein',
-           'email' =>'hosein3@gmail.com',
+           'type' =>'user',
+           'name' =>'hosein'.$i,
+           'email' =>'hosein'.$i.'@gmail.com',
            'password' =>bcrypt('12345678')
        ]);
+      }
+    //   User::create([
+    //     'type' =>'admin',
+    //     'name' =>'hosein3',
+    //     'email' =>'hosein3@gmail.com',
+    //     'password' =>bcrypt('12345678')
+    // ]);
     }
 }

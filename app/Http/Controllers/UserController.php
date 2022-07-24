@@ -35,6 +35,7 @@ class UserController extends Controller
 
         $list_user = User::latest()->paginate(3);
         $useridd =0;
+        // dd($list_user);
         return view('user.userlist',compact('list_user','useridd'));
     }
 
@@ -45,7 +46,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       
+       dd(User::all());
     }
 
     /**
@@ -106,10 +107,39 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
-        dd($user->id);
+        //dd($user->id);
         
         if(auth()->user()->type=='admin'){
              $user->delete();
+
+             $user = auth()->user();
+
+      
+        
+             $allow = $this->authorize('update',$user);
+             
+     
+             $list_user = User::latest()->paginate(3);
+             $useridd =0;
+
+             return response()->json([
+                "success"=>true,
+             'html' => view('user.userlist',compact('list_user','useridd'))->render()
+            ]);
         }
+    }
+
+    public function changelist()
+    {
+        $user = auth()->user();
+
+      
+        
+        $allow = $this->authorize('update',$user);
+        
+
+        $list_user = User::latest()->paginate(3);
+        $useridd =0;
+        return compact('list_user');
     }
 }
