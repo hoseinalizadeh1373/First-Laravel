@@ -30,7 +30,7 @@
 								</td>
 
 								<td class="text-center">
-									<span class="label label-default">{{$item->type}} </span>
+									<span class="label label-default" id="type_{{$item->id}}">{{$item->type}} </span>
 								</td>
 								<td>
 									<a href="#">{{$item->email}}</a>

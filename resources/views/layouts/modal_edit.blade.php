@@ -4,9 +4,10 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">تغییر سطح دسترسی</h5>
-				<button type="button" class="close ml-2" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
+				
+				
+				<button type="button" class="btn-close position-absolute top-5 start-0 bg-light text-warning" data-bs-dismiss="modal" aria-label="Close" id="close_update"></button>
+				
 			</div>
 			<div class="modal-body">
 				<div class="d-flex justify-content-between">

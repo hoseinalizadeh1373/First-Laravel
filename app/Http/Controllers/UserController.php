@@ -16,27 +16,18 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-      
-      
-
-    //  public static function setid($idd)
-    //  {
-    //     $idid = $idd;
-    //  }
 
     public function index()
     {
         $user = auth()->user();
 
-      
-        
-        $allow = $this->authorize('update',$user);
-        
+        $allow = $this->authorize('update', $user);
 
         $list_user = User::latest()->paginate(3);
-        $useridd =0;
- 
-        return view('user.userlist',compact('list_user','useridd'));
+
+        $useridd = 0;
+
+        return view('user.userlist', compact('list_user', 'useridd'));
     }
 
     /**
@@ -46,7 +37,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       dd(User::all());
+        dd(User::all());
     }
 
     /**
@@ -68,7 +59,6 @@ class UserController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**
@@ -81,7 +71,7 @@ class UserController extends Controller
     {
         // $user = User::find($id)->get();
         // dd($user);
-        return view ('user.edit',compact($user));
+        return view('user.edit', compact($user));
     }
 
     /**
@@ -93,15 +83,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        if(auth()->user()->type=='admin' and auth()->user() != $user){
+        if (auth()->user()->type == 'admin' and auth()->user() != $user) {
 
             $user->update([
-                'type' =>"admin",
+                'type' => $request->value,
             ]);
 
             return response()->json([
-                "success"=>true,
-                "data" =>$request->value
+                "success" => true,
+                "data" => $request->value
             ]);
         }
     }
@@ -112,30 +102,26 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,User $user)
+    public function destroy(Request $request, User $user)
     {
-        //dd($user->id);
-        
-        if(auth()->user()->type=='admin'){
-            
+
+        if (auth()->user()->type == 'admin') {
+
             $user->delete();
 
-             $user2 = auth()->user();
+            $user2 = auth()->user();
 
-             $allow = $this->authorize('update',$user2);
-             
-             $list_user = User::latest()->paginate(3)
-             ->setPath(route('users.index'));
-      
-                 $useridd =0;
+            $allow = $this->authorize('update', $user2);
 
-                 return response()->json([
-                    "success"=>true,
-                    'html' => view('user.userlist',compact('list_user','useridd'))->render(),
-                ]);
+            $list_user = User::latest()->paginate(3)
+                ->setPath(route('users.index'));
+
+            $useridd = 0;
+
+            return response()->json([
+                "success" => true,
+                'html' => view('user.userlist', compact('list_user', 'useridd'))->render(),
+            ]);
         }
-   
     }
-
- 
 }
