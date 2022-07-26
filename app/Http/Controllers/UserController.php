@@ -35,7 +35,7 @@ class UserController extends Controller
 
         $list_user = User::latest()->paginate(3);
         $useridd =0;
-        // dd($list_user);
+ 
         return view('user.userlist',compact('list_user','useridd'));
     }
 
@@ -91,12 +91,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        if(isset($request->toUser)){
-            dd($id);
+        if(auth()->user()->type=='admin' and auth()->user() != $user){
+
+            $user->update([
+                'type' =>"admin",
+            ]);
+
+            return response()->json([
+                "success"=>true,
+                "data" =>$request->value
+            ]);
         }
-        else dd('no');
     }
 
     /**
@@ -105,41 +112,30 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, User $user)
+    public function destroy(Request $request,User $user)
     {
         //dd($user->id);
         
         if(auth()->user()->type=='admin'){
-             $user->delete();
+            
+            $user->delete();
 
-             $user = auth()->user();
+             $user2 = auth()->user();
 
-      
-        
-             $allow = $this->authorize('update',$user);
+             $allow = $this->authorize('update',$user2);
              
-     
-             $list_user = User::latest()->paginate(3);
-             $useridd =0;
-
-             return response()->json([
-                "success"=>true,
-             'html' => view('user.userlist',compact('list_user','useridd'))->render()
-            ]);
-        }
-    }
-
-    public function changelist()
-    {
-        $user = auth()->user();
-
+             $list_user = User::latest()->paginate(3)
+             ->setPath(route('users.index'));
       
-        
-        $allow = $this->authorize('update',$user);
-        
+                 $useridd =0;
 
-        $list_user = User::latest()->paginate(3);
-        $useridd =0;
-        return compact('list_user');
+                 return response()->json([
+                    "success"=>true,
+                    'html' => view('user.userlist',compact('list_user','useridd'))->render(),
+                ]);
+        }
+   
     }
+
+ 
 }

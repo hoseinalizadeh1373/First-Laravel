@@ -37,11 +37,11 @@
 								</td>
 								<td style="width: 20%;">
 								
-									<button value="{{$item->id}}" data-toggle="modal" data-target="#exampleModal" class="table-link warning bg-dark text-warning border positioner rounded bg-light px-1 cursor-pointer editpen">
+									<button value="{{$item->id}}" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick='setid("{{$item->id}}","update")' class="table-link warning bg-dark text-warning border positioner rounded bg-light px-1 cursor-pointer editpen">
 										<i class="fas fa-pen-alt fa-sm cursor-pointer" ></i>
 									</button>
 
-									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen" value="{{$item->id}}">
+									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen" value="{{$item->id}}" onclick='setid("{{$item->id}}","del")'>
 										<i class="fas fa-trash-alt fa-sm cursor-pointer"  ></i>
 									</button>
 								</td>
@@ -57,8 +57,8 @@
 </div>
 
 <div class="d-flex justify-content-center mt-2  " id="pagination">{{ $list_user -> links()}}</div>
-<hr class='d-block'>
 
+<hr class='d-block'>
 <div id="myModal2" class="modal2 ">
 
   <!-- Modal content -->

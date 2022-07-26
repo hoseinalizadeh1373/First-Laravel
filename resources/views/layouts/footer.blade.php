@@ -1,4 +1,5 @@
 <script src="{{ asset('/js/app.js')}}"></script>
+<script src="{{ asset('/js/app2.js')}}"></script>
 <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -7,7 +8,7 @@
     let pen = document.getElementsByClassName('editpen');
     let trash = document.getElementsByClassName('deletepen');
     let idd = 0;
-    
+/*
     for(let i=0;i<pen.length;i++){
         pen[i].addEventListener('click',function(e){
             idd = pen[i].value;
@@ -19,6 +20,35 @@
             idd = trash[i].value;
         })
     }
+*/
+
+function setupdate(valueforupdate){
+    
+    axios.put('/users/'+idd,
+    {
+        value:valueforupdate =1? 'admin' : 'user'
+    }
+    )
+    .then(function(response){
+        if(response.data['success']==true){
+            alert(response.data['data']);
+        }
+
+    }).catch(function (error) {
+    // handle error
+    alert(error);
+  })
+  .then(function () {
+  });
+}
+   function  setid(id,method){
+    idd = id;
+    if(method=="del"){
+    modal.style.display = "block";
+   }
+
+   }
+
     let form = document.getElementById('formusers');
     let form2 = document.getElementById('formdelete');
     form.addEventListener('submit',function(){
@@ -26,18 +56,8 @@
     form.action = s.replace('88888888888',idd);
     form.submit();
     });
-    // form2.addEventListener('submit',function(e){
-    //   e.preventDefault();
-    //   deleteaxios(idd);
-    // //     let s  = "{{Route('users.destroy',['user'=>88888888888])}}";
-    // // form2.action = s.replace('88888888888',idd);
-    // form2.submit();
-    // });
 
-
-   
-
- var modal = document.getElementById('myModal2');
+var modal = document.getElementById('myModal2');
 
 // Get the button that opens the modal
 var btn = document.getElementsByClassName("myBtn");
@@ -66,26 +86,7 @@ window.onclick = function(event) {
     }
 }
 
- function getuser(){
-axios.get('/users/changelist')
-  .then(function (response) {   
-    
-  })
-  .catch(function (error) {
-    // handle error
-    alert(error);
-  })
-  .then(function () {
-    // always executed
-  });
 
-}
-let page = document.getElementById('pagination');
-page.addEventListener('click',function(e){
-  // getuser();
-  // e.preventDefault();
-  console.log(page.getitem());
-})
 // let tbody = document.getElementById('tbody');
 function deleteaxios(){
  
@@ -99,20 +100,14 @@ axios.delete('/users/'+idd)
      let index1 = response.data['html'].indexOf("id='tbody'");
      let index2 = response.data['html'].indexOf("<hr class='d-block'>");
      let a = index2 - index1;
-    //  alert(index1+"d"+index2);
-    //  let reshteh = response.data['html'].substr(index1);
-    document.getElementById('pagination').innerHTML="";
-    //مگم مگه از همینه که دو تا ازش هست ، مگه با کد اضافش کنم ؟
- let reshteh = response.data['html'].substr(index1,a);
- console.log(reshteh);
 
- reshteh="<div class='container rounded mt-2' "+reshteh;
-    // let reshteh = response.data['html'].replaceAt(index1,reshteh);
-    
+     document.getElementById('pagination').remove();
+     //مگم مگه از همینه که دو تا ازش هست ، مگه با کد اضافش کنم ؟
+     let reshteh = response.data['html'].substr(index1+11,a);
+   
      document.getElementById('tbody').innerHTML=reshteh;
-    //  tbody.innerHtml = reshteh;
+    
     closedelete();
-    // getuser();
     
   }
   console.log(response.data);
@@ -124,16 +119,7 @@ axios.delete('/users/'+idd)
   .then(function () {
   });
 }
-String.prototype.replaceAt = function(index, replacement) {
-	if (index >= this.length) {
-		return this.valueOf();
-	}
 
-	return this.substring(0, index) + replacement + this.substring(index + 1);
-}
-String.prototype.replaceBetween = function(start, end, what) {
-  return this.substring(0, start) + what + this.substring(end);
-};
 
 </script>
 

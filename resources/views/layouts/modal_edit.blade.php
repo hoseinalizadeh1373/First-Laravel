@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -10,16 +11,16 @@
 			<div class="modal-body">
 				<div class="d-flex justify-content-between">
 
-					<form action="{{Route('users.update',['user' => $useridd])}}" id="formusers" method="post">
+					<!-- <form action="{{Route('users.update',['user' => $useridd])}}" id="formusers" method="post">
 						@csrf
-						@method('put')
-						<button class="btn-sm bg-light  border rounded " name="toAdmin" value="2" type="submit">
+						@method('put') -->
+						<button class="btn-sm bg-light  border rounded " name="toAdmin" value="1" onclick="setupdate(1)" type="submit" >
 							تغییر وضعیت به ادمین
 						</button>
-						<button class="btn-sm bg-light border rounded " name="toUser" value="1" type="submit">
+						<button class="btn-sm bg-light border rounded " name="toUser" value="2"  onclick="setupdate(2)" type="submit">
 							تغییر وضعیت به کاربر عادی
 						</button>
-					</form>
+					<!-- </form> -->
 					
 				</div>
 			</div>
