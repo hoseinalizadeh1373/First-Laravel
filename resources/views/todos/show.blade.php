@@ -12,7 +12,7 @@
                     {{ $todo->description}}
                 </div>
                 <hr>
-                <div class=" d-flex mr-3 mb-2">
+                <div class=" d-flex mr-5 mb-2">
                 <a href="{{ route('todos.edit',['todo' => $todo->id]) }}" class="btn btn-sm btn-warning">
                     ویرایش
                 </a>
