@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
 
 </head>
 
-<body >
+<body>
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex p-2  justify-content-sm-start">
@@ -35,10 +36,7 @@
           <a class="nav-link " href="#">درباره ما</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="جستجو" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">جستجو</button>
-      </form>
+
     </div>
     <ul class="navbar-nav ml-5 pl-5">
       <!-- Authentication Links -->
@@ -53,27 +51,22 @@
       @endif
       @else
       <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{ Auth::user()->name }} <span class="caret"></span>
         </a>
-
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+          <li class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
             {{ __('خروج') }}
-          </a>
-
+          </li>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
-            
           </form>
-        </div>
+        </ul>
       </li>
       @endguest
     </ul>
-  
+
   </nav>
-  <form action="{{route('logout')}}" method='POST'>
-    @csrf
-            <button type="submit">fdddddddddddddddddddddddddddddddddddddddddddddddd</button>
- </form>
+ 

@@ -143,8 +143,9 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($todo)
+    public function destroy( Todo $todo)
     {
+        // dd($todo);
         $todo->delete();
         alert()->error('با موفقیت حذف شد', '');
          //SweetAlert::message('Robots are working!');
