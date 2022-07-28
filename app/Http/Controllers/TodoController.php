@@ -50,6 +50,10 @@ class TodoController extends Controller
         //  dd($profile ->user);
     //    dd()
 
+        // $todos = Todo::all();
+        // $young = $todos->filter(function($key,$value){
+        //     return $value->age <35;
+        // });
     $todos = auth()->user()->type == 'admin' ? Todo::latest()->paginate(5) : Todo::where('user_id','=',auth()->user()->id)->latest()->paginate(5);
         // $todos = Todo::where('user_id','=',auth()->user()->id)->latest()->paginate(5);
         return view('todos.index',compact('todos'));
