@@ -23,7 +23,7 @@ class UserController extends Controller
 
         $allow = $this->authorize('update', $user);
 
-        $list_user = User::all();
+        $list_user = User::latest()->paginate(3);
 
         $useridd = 0;
 

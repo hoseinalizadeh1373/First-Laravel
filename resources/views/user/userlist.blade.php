@@ -16,7 +16,7 @@
 								<th><span>عملیات</span></th>
 							</tr>
 						</thead>
-						<tbody class="text-center pt-1" >
+						<tbody class="text-center pt-1 " id='ttt' >
 							@foreach($list_user as $item)
 							<tr id='tr_{{$item->id}}'>
 								<td>
@@ -37,12 +37,12 @@
 								</td>
 								<td style="width: 20%;">
 								
-									<button value="{{$item->id}}" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick='setid("{{$item->id}}","update")' class="table-link warning bg-dark text-warning border positioner rounded bg-light px-1 cursor-pointer editpen">
+									<button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-id_row="{{$item->id}}" class="table-link warning bg-dark text-warning border positioner rounded bg-light px-1 cursor-pointer editpen">
 										<i class="fas fa-pen-alt fa-sm cursor-pointer" ></i>
 									</button>
 
-									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen" value="{{$item->id}}" onclick='setid("{{$item->id}}","del")'>
-										<i class="fas fa-trash-alt fa-sm cursor-pointer"  ></i>
+									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen"    data-idrow="{{$item->id}}" >
+										<i class="fas fa-trash-alt fa-sm cursor-pointer "></i>
 									</button>
 								</td>
 							</tr>
@@ -70,7 +70,7 @@
  <!-- <form id="formdelete" action="{{Route('users.index')}}" method="post" >
 		@csrf
 		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
-		<button  class="bg-dark text-warning btn btn-md border rounded" onclick="deleteaxios()" type="submit" > انجام بده </button>
+		<button  class="bg-dark text-warning btn btn-md border rounded submit_btn" data-iddelete='0' type="submit" > انجام بده </button>
 	<!-- </form> -->
 
 	
