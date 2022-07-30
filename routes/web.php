@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 // // return Test::saybye();
 // return view('welcome');
 // });
+Route::get('/todos/search',[TodoController::class,'search'])->name('todos.search');
 Route::get('/todos/{todo}/done', [TodoController::class, 'done'])->name('todos.done');
 
 Route::resource('todos', TodoController::class);
@@ -69,3 +70,4 @@ Route::get('/', [TodoController::class, 'index'])->middleware('verified');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::resource('users', UserController::class);
 Route::get('/users/changelist',[UserController::class,'changelist']);
+

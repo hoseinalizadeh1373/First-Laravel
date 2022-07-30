@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('content')
+
+@include('layouts.search')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,7 +14,7 @@
                     تسک ها
                    
                 </div>
-                <div class="card-body">
+                <div class="card-body" >
                     <ul class="list-group-item">
                         @foreach($todos as $item)
                         <li class="list-group-item d-flex justify-content-between">
@@ -34,8 +36,12 @@
                     </ul>
                 </div>
             </div>
+
             <div class="d-flex justify-content-center">{{ $todos -> links()}}</div>
         </div>
+      
+         
+   </body>
     </div>
 </div>
 @endsection

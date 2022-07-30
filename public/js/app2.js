@@ -49,6 +49,7 @@ for (let i = 0; i < btn.length; i++) {
     })
 }
 
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
@@ -56,6 +57,7 @@ span.onclick = function() {
 
 function closedelete() {
     modal.style.display = "none";
+    
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -95,3 +97,6 @@ function deleteaxios() {
         })
         .then(function() {});
 }
+
+$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+
