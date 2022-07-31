@@ -1,19 +1,19 @@
 
-let pen = document.getElementsByClassName('editpen');
+// let pen = document.getElementsByClassName('editpen');
 // let trash = document.getElementsByClassName('deletepen');
 let closeupdate = document.getElementById('close_update');
-let idd = 0;
 
-function setupdate(valueforupdate) {
+
+function setupdate(idforedit,valueforupdate) {
 
     let sender_value = valueforupdate == 2 ? 'user' : 'admin';
 
-    axios.put('/users/' + idd, {
+    axios.put('/users/' + idforedit, {
         value: sender_value
     })
         .then(function (response) {
             if (response.data['success'] == true) {
-                document.getElementById('type_' + idd).innerHTML = sender_value;
+                document.getElementById('type_' + idforedit).innerHTML = sender_value;
                 closeupdate.click();
             }
 
@@ -37,11 +37,11 @@ var btn = document.getElementsByClassName("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener('click', function () {
-        modal.style.display = "block";
-    })
-}
+// for (let i = 0; i < btn.length; i++) {
+//     btn[i].addEventListener('click', function () {
+//         modal.style.display = "block";
+//     })
+// }
 
 
 // When the user clicks on <span> (x), close the modal
@@ -59,17 +59,44 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+//edit
+$(".editpen").bind().on('click',function(){
+    let idforedit = $(this).data('id_row');
+    $('#exampleModal').data('modal',idforedit);
+});
 
-
-$("#ttt").on('click',".deletepen", function () {
-    let idrow = $(this).data('idrow');
-   
-    $(".submit_btn").data('iddelete',idrow);
+$(".editer").on('click',function(){
+    let idforupodate = $('#exampleModal').data('modal');
+    let permission = $(this).data('update');
+    setupdate(idforupodate,permission);
 })
-$(".submit_btn").on('click',function(){
-    let s = $(this).data('iddelete');
-    
-    deleteaxios(s);
+
+
+
+
+
+
+
+$("body").on("click", ".deletepen", function(){
+    let idfordelete = $(this).data('idrow');
+    showmodal(idfordelete);
+})
+$(".deletepen").bind().on('click',function(){
+    let idfordelete = $(this).data('idrow');
+    showmodal(idfordelete);
+});
+
+
+function showmodal (id_delete=0){
+    let idrow = id_delete;
+
+    $(".submit_btn").data('iddelete', idrow);
+    modal.style.display = "block";
+}
+
+$(".submit_btn").on('click', function () {
+    let idfordelete = $(this).data('iddelete');
+    deleteaxios(idfordelete);
 })
 function deleteaxios(idr) {
     axios.delete('/users/' + idr)
@@ -80,15 +107,15 @@ function deleteaxios(idr) {
                 let index2 = response.data['html'].indexOf("<hr class='d-block'>");
 
                 let a = index2 - index1;
-
-                document.getElementById('pagination').remove();
+                
+                
 
                 let reshteh = response.data['html'].substr(index1 + 11, a);
 
                 console.log(reshteh);
 
                 document.getElementById('tbody').innerHTML = reshteh;
-
+                document.getElementById('pagination').remove();
                 closedelete();
 
             }

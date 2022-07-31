@@ -4,7 +4,7 @@
 <div class="container rounded mt-2" id='tbody'>
 	<div class="row border rounded">
 		<div class="col-lg-12">
-			<div class="">
+			
 				<div class="table-responsive">
 					<table class="table user-list rounded">
 						<thead class="coloe text-center mb-1">
@@ -16,7 +16,7 @@
 								<th><span>عملیات</span></th>
 							</tr>
 						</thead>
-						<tbody class="text-center pt-1 " id='ttt' >
+						<tbody class="text-center pt-1 " id='ttt'>
 							@foreach($list_user as $item)
 							<tr id='tr_{{$item->id}}'>
 								<td>
@@ -36,13 +36,13 @@
 									<a href="#">{{$item->email}}</a>
 								</td>
 								<td style="width: 20%;">
-								
-									<button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-id_row="{{$item->id}}" class="table-link warning bg-dark text-warning border positioner rounded bg-light px-1 cursor-pointer editpen">
-										<i class="fas fa-pen-alt fa-sm cursor-pointer" ></i>
-									</button>
 
-									<button  class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen"    data-idrow="{{$item->id}}" >
-										<i class="fas fa-trash-alt fa-sm cursor-pointer "></i>
+									<button data-bs-toggle="modal" data-bs-target="#exampleModal" data-id_row="{{$item->id}}" class="table-link warning bg-dark text-warning border positioner rounded bg-light px-1 cursor-pointer editpen">
+										<i class="fas fa-pen-alt fa-sm cursor-pointer"></i>
+									</button>
+									<!-- onclick='sss("{{$item->id}}")' -->
+									<button class="table-link positioner text-warning  border myBtn  rounded bg-light px-1 bg-dark cursor-pointer deletepen"  data-idrow="{{$item->id}}">
+										<i class="fas fa-trash-alt fa-sm cursor-pointer " data-idrow2="{{$item->id}}"></i>
 									</button>
 								</td>
 							</tr>
@@ -50,8 +50,6 @@
 						</tbody>
 					</table>
 				</div>
-
-			</div>
 		</div>
 	</div>
 </div>
@@ -61,25 +59,25 @@
 <hr class='d-block'>
 <div id="myModal2" class="modal2 ">
 
-  <!-- Modal content -->
-  <div class="modal2-content row">
-    <span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
-    <p class="col-sm-6 my-3"> آیا از حذف این کاربر مطمئن هستید ؟</p>
-	<div class="col-md-4 d-flex align-items-center  my-2">
-	<!-- action="{{Route('users.destroy',['user' => $useridd])}}" -->
- <!-- <form id="formdelete" action="{{Route('users.index')}}" method="post" >
+	<!-- Modal content -->
+	<div class="modal2-content row">
+		<span class="close col-sm-1 d-flex align-items-center my-2 "><i class="fas fa-times-circle"></i></span>
+		<p class="col-sm-6 my-3"> آیا از حذف این کاربر مطمئن هستید ؟</p>
+		<div class="col-md-4 d-flex align-items-center  my-2">
+			<!-- action="{{Route('users.destroy',['user' => $useridd])}}" -->
+			<!-- <form id="formdelete" action="{{Route('users.index')}}" method="post" >
 		@csrf
 		<button  class="bg-dark text-warning btn btn-md border rounded" type="submit" name="idf" > انجام بده </button> -->
-		<button  class="bg-dark text-warning btn btn-md border rounded submit_btn" data-iddelete='0' type="submit" > انجام بده </button>
-	<!-- </form> -->
+			<button class="bg-dark text-warning btn btn-md border rounded submit_btn"  data-iddelete='0' type="submit"> انجام بده </button>
+			<!-- </form> -->
 
-	
-	<!-- <button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button> -->
 
-	<button class="btn btn-md text-warning bg-dark border rounded" onclick="closedelete()" type="cancel">انصراف</button>
+			<!-- <button class="btn btn-sm text-warning bg-dark" onclick="closedelete()">انصراف</button> -->
+
+			<button class="btn btn-md text-warning bg-dark border rounded" onclick="closedelete()" type="cancel">انصراف</button>
+		</div>
+
 	</div>
-
-  </div>
 </div>
 <!-- <form action="{{Route('todos.show',['todo' =>1])}}" method='get'> -->
 
