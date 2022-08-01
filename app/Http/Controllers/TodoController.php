@@ -155,14 +155,21 @@ class TodoController extends Controller
         //SweetAlert::message('Robots are working!');
         return redirect()->route('todos.index');
     }
-    public function done(Todo $todo)
+    public function done( Todo $todo)
     {
-
-        $todo->update([
-            'done' => 1
+        return response()->json([
+            "success"=> true
         ]);
-        alert()->success('انجام شد', '');
-        return redirect()->route('todos.index');
+       
+        // $value3 = $request->value;
+
+      
+
+        // return response()->json([
+        //     "success"=>true
+        // ]);
+        // alert()->success('انجام شد', '');
+        // return redirect()->route('todos.index');
     }
     public function search(Request $request)
     {

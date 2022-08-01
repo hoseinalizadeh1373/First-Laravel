@@ -1,8 +1,7 @@
 
-// let pen = document.getElementsByClassName('editpen');
-// let trash = document.getElementsByClassName('deletepen');
-let closeupdate = document.getElementById('close_update');
+const { default: axios } = require("axios");
 
+let closeupdate = document.getElementById('close_update');
 
 function setupdate(idforedit,valueforupdate) {
 
@@ -24,24 +23,13 @@ function setupdate(idforedit,valueforupdate) {
         .then(function () { });
 }
 
-
-
-
-
 var modal = document.getElementById('myModal2');
 
 // Get the button that opens the modal
-var btn = document.getElementsByClassName("myBtn");
+// var btn = document.getElementsByClassName("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-// for (let i = 0; i < btn.length; i++) {
-//     btn[i].addEventListener('click', function () {
-//         modal.style.display = "block";
-//     })
-// }
 
 
 // When the user clicks on <span> (x), close the modal
@@ -51,7 +39,6 @@ span.onclick = function () {
 
 function closedelete() {
     modal.style.display = "none";
-
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
@@ -59,11 +46,12 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-//edit
+
+//edit_user
 $(".editpen").bind().on('click',function(){
     let idforedit = $(this).data('id_row');
     $('#exampleModal').data('modal',idforedit);
-});
+})
 
 $(".editer").on('click',function(){
     let idforupodate = $('#exampleModal').data('modal');
@@ -72,11 +60,7 @@ $(".editer").on('click',function(){
 })
 
 
-
-
-
-
-
+//delete_user
 $("body").on("click", ".deletepen", function(){
     let idfordelete = $(this).data('idrow');
     showmodal(idfordelete);
@@ -85,6 +69,10 @@ $(".deletepen").bind().on('click',function(){
     let idfordelete = $(this).data('idrow');
     showmodal(idfordelete);
 });
+
+
+
+
 
 
 function showmodal (id_delete=0){
@@ -99,6 +87,7 @@ $(".submit_btn").on('click', function () {
     deleteaxios(idfordelete);
 })
 function deleteaxios(idr) {
+    
     axios.delete('/users/' + idr)
         .then(function (response) {
             if (response.data) {

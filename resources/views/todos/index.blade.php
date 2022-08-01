@@ -14,7 +14,7 @@
                     تسک ها
                    
                 </div>
-                <div class="card-body" >
+                <div class="card-body">
                     <ul class="list-group-item">
                         @foreach($todos as $item)
                         <li class="list-group-item d-flex justify-content-between">
@@ -23,12 +23,11 @@
                             <a href="{{ Route('todos.show',['todo'=>$item->id])}}" class="btn btn-dark btn-sm ">
                                 نمایش
                             </a>
-                            @if (!$item->done )
-                            <a href="{{ Route('todos.done',['todo'=>$item->id])}}" class="btn btn-outline-info btn-sm ">
-                                انجام شد
+                            <!-- href="{{ Route('todos.done',['todo'=>$item->id])}}" -->
+                            <a  data-iddone='{{$item->id}}' data-done='{{$item->done}}'  class="btn btn-outline-info btn-sm done_button">
+                              {{$item->done ==0 ?"انجام شد" : "لغو"}}
+                            <!-- @if (!$item->done)انجام شد @endif -->
                             </a>    
-                            @endif
-                            
                         </div>
                         </li>
                         

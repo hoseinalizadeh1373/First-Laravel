@@ -29,9 +29,11 @@
         <li class="nav-item active">
           <a class="nav-link" href="{{Route('todos.index')}}">صفحه اصلی <span class="sr-only">(current)</span></a>
         </li>
+        @can('update',Auth::user())
         <li class="nav-item">
           <a class="nav-link" href="{{Route('users.index')}}">کاربران</a>
         </li>
+        @endcan
         <li class="nav-item">
           <a class="nav-link " href="#">درباره ما</a>
         </li>

@@ -8,6 +8,9 @@
 @include('sweet::alert')
 
 <script type="text/javascript">
+
+
+
     (function($) {
         $(document).ready(function() {
             $('#search').on('keyup', function() {
@@ -39,9 +42,34 @@
         })
     }(jQuery));
 
-
-
+//todo_done
+$("body").on('click','.done_button',function(){
     
+    let idfordone = $(this).data('iddone');
+    let valuedone = $(this).data('done');
+    
+    donetodo(idfordone,valuedone);
+})
+// $(".done_button").on('click',function(){
+    
+//     let idfordone = $(this).data('iddone');
+//     let valuedone = $(this).data('done');
+    
+//     donetodo(idfordone,valuedone);
+// })
+function donetodo(iddone,valuedone1){
+alert("s");
+    axios.put('/todos/3/done')
+    .then(function(){
+        alert('success');
+    })
+    .catch(function(){
+        alert('استثنايي رخ داده');
+    });
+  
+    
+}
+
 </script>
 
 </body>

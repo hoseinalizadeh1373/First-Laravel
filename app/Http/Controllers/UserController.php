@@ -65,7 +65,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        dd(User::all());
+        dd(Todo::all());
     }
 
     /**
