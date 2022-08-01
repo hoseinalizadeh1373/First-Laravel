@@ -24,7 +24,7 @@
                                 نمایش
                             </a>
                             <!-- href="{{ Route('todos.done',['todo'=>$item->id])}}" -->
-                            <a  data-iddone='{{$item->id}}' data-done='{{$item->done}}'  class="btn btn-outline-info btn-sm done_button">
+                            <a id="done_{{$item->id}}" data-iddone="{{$item->id}}" data-done="{{$item->done}}"  class="btn btn-outline-info btn-sm done_button2">
                               {{$item->done ==0 ?"انجام شد" : "لغو"}}
                             <!-- @if (!$item->done)انجام شد @endif -->
                             </a>    

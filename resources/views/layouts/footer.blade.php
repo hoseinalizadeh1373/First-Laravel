@@ -1,3 +1,5 @@
+
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -5,10 +7,42 @@
 <script src="{{ asset('/js/app2.js')}}"></script>
 
 
+
+
 @include('sweet::alert')
 
 <script type="text/javascript">
-
+//todo_done
+$(".done_button2").unbind().on('click',function(){
+  
+    let idfordone = $(this).data('iddone');
+    let valuedone = $(this).data('done');   
+    donetodo(idfordone,valuedone);
+})
+// $(".done_button").on('click',function(){
+    
+//     let idfordone = $(this).data('iddone');
+//     let valuedone = $(this).data('done');
+    
+//     donetodo(idfordone,valuedone);
+// })
+function donetodo(iddone,valuedone1){
+    valuedone1 = 1 -valuedone1;
+    
+    axios.get('/todos/'+iddone+'/done',{
+        params: { value: valuedone1 }
+    })
+    .then(function(response){
+        if(response.data){
+            let element = document.getElementById('done_'+iddone);
+             element.innerHTML=response.data['result'];
+             $('#done_'+iddone).data('done',valuedone1);
+        }
+    })
+    .catch(function(error){
+        alert(error);
+    });   
+}
 
 
     (function($) {
@@ -42,33 +76,7 @@
         })
     }(jQuery));
 
-//todo_done
-$("body").on('click','.done_button',function(){
-    
-    let idfordone = $(this).data('iddone');
-    let valuedone = $(this).data('done');
-    
-    donetodo(idfordone,valuedone);
-})
-// $(".done_button").on('click',function(){
-    
-//     let idfordone = $(this).data('iddone');
-//     let valuedone = $(this).data('done');
-    
-//     donetodo(idfordone,valuedone);
-// })
-function donetodo(iddone,valuedone1){
-alert("s");
-    axios.put('/todos/3/done')
-    .then(function(){
-        alert('success');
-    })
-    .catch(function(){
-        alert('استثنايي رخ داده');
-    });
-  
-    
-}
+
 
 </script>
 
