@@ -15,10 +15,10 @@
 
 </head>
 
-<body>
+<body class="bg-dark">
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex p-2  justify-content-sm-start">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex p-2  justify-content-sm-start bg-dark">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,16 +26,16 @@
 
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{Route('todos.index')}}">صفحه اصلی <span class="sr-only">(current)</span></a>
+        <li class="nav-item active border rounded border-info mx-2 ">
+          <a class="nav-link text-light" href="{{Route('todos.index')}}">صفحه اصلی <span class="sr-only">(current)</span></a>
         </li>
         @can('update',Auth::user())
-        <li class="nav-item">
-          <a class="nav-link" href="{{Route('users.index')}}">کاربران</a>
+        <li class="nav-item border rounded border-info mx-2">
+          <a class="nav-link text-light" href="{{Route('users.index')}}">کاربران</a>
         </li>
         @endcan
-        <li class="nav-item">
-          <a class="nav-link " href="#">درباره ما</a>
+        <li class="nav-item border rounded border-info mx-2">
+          <a class="nav-link text-light" href="#">درباره ما</a>
         </li>
       </ul>
 

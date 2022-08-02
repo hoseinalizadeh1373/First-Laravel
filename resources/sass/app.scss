@@ -381,3 +381,50 @@
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
   }
+  .sshadow-good{
+    box-shadow: 0px 5px 12px 10px rgba(163, 160, 160, 0.507);
+    transform: rotate3d(0, 0, 0, 0deg);
+    transform: perspective(1500px) rotateY(45deg);
+    border-radius: 1rem;
+    transition: transform 1s ease 0s;
+}
+.sshadow-good input:focus{
+    background: rgb(253, 252, 165);
+}
+.sshadow-good input:focus::placeholder{
+    color: darkcyan;
+}
+.sshadow-good:hover{
+    transform: perspective(3000px) rotateY(5deg);
+}
+.floating{
+  
+    position:fixed;
+    width:60px;
+    height:60px;
+    left: 47%;
+    cursor : pointer;
+    bottom: 1%;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    transition: all ease-in-out 400ms ;
+}
+.floating:hover{
+  color: orange;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.slider {
+  cursor: pointer;
+  padding: 9px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background: whitesmoke;
+}
+.slider:checked{
+background: purple;
+}
