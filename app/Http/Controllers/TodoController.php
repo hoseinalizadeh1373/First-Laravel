@@ -70,14 +70,15 @@ class TodoController extends Controller
     }
     public function store(Request $request)
     {
+        
         $request->validate([
             'title' => 'required',
-            'description' => 'required'
+            'desc' => 'required'
         ]);
 
         Todo::create([
             'title' => $request->title,
-            'description' => $request->description,
+            'description' => $request->desc,
             'user_id' => auth()->user()->id
         ]);
         /**
@@ -92,9 +93,12 @@ class TodoController extends Controller
         //     'title'=>'tt',
         //     'description' => $request->description,
         // ]);
-        alert()->success('با موفقیت ثبت شد', '');
+        // alert()->success('با موفقیت ثبت شد', '');
         // SweetAlert::message('Robots are working!');
-        return redirect()->route('todos.index');
+        // return redirect()->route('todos.index');
+        return response()->json([
+            'success' => true
+        ]);
     }
     /**
      * Display the specified resource.
@@ -157,14 +161,14 @@ class TodoController extends Controller
     }
     public function done(Request $request, Todo $todo)
     {
-         $v = $request->value;
+        $v = $request->value;
         $todo->update([
             'done' => $v,
         ]);
 
-$res = $v==0 ? "انجام شد":"لغو";
+        $res = $v == 0 ? "انجام شد" : "لغو";
         return response()->json([
-            "success"=>true,
+            "success" => true,
             "result" => $res
         ]);
         // alert()->success('انجام شد', '');
@@ -177,7 +181,7 @@ $res = $v==0 ? "انجام شد":"لغو";
             $output = "";
             if ($request->search != "") {
                 $result = Todo::where('description', 'LIKE', '%' . $request->search . '%')
-               ->orWhere('title', 'LIKE', '%' . $request->search . '%')->get();
+                    ->orWhere('title', 'LIKE', '%' . $request->search . '%')->get();
                 if ($result) {
                     foreach ($result as $item) {
                         $output .= "<tr>" .

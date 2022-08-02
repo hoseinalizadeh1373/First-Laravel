@@ -7,7 +7,8 @@
         <div class="col-md-8">
             <div class="d-flex justify-content-between my-3 align-items-center">
             <h4>تسک ها</h4>
-            <a class="btn btn-outline-dark btn-sm " href="{{route('todos.create')}}">ایجاد تسک</a>
+            <!-- href="{{route('todos.create')}}" -->
+            <a class="btn btn-outline-dark btn-sm "  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" >ایجاد تسک</a>
             </div>
             <div class="card">
                 <div class="card-header">
@@ -40,7 +41,8 @@
         </div>
       
          
-   </body>
+   
     </div>
 </div>
+@include('todos.create')
 @endsection

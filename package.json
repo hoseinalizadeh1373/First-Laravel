@@ -29,6 +29,7 @@
         "jquery": "^3.5.1",
         "popper.js": "^1.16.1",
         "sass": "^1.28.0",
-        "sass-loader": "^10.0.5"
+        "sass-loader": "^10.0.5",
+        "watch": "^1.0.2"
     }
 }
