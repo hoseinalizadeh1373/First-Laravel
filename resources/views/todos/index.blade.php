@@ -2,7 +2,7 @@
 @section('content')
 
 @include('layouts.search')
-<div class="container bg-light">
+<div class="container ">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="d-flex justify-content-between my-3 align-items-center">
