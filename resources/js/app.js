@@ -50,7 +50,7 @@ function createtodo(title_todo, desc_todo) {
     })
         .then(function (response) {
             if (response.data['success'] === true) {
-                alert("s");
+                
             }
         }).catch(function (error) {
             if (error.response) {
