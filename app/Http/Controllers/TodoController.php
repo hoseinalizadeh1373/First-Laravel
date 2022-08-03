@@ -96,8 +96,12 @@ class TodoController extends Controller
         // alert()->success('با موفقیت ثبت شد', '');
         // SweetAlert::message('Robots are working!');
         // return redirect()->route('todos.index');
+        $todos = auth()->user()->type == 'admin' ? Todo::latest()->paginate(5) : Todo::where('user_id', '=', auth()->user()->id)->latest()->paginate(5);
+        // $todos = Todo::where('user_id','=',auth()->user()->id)->latest()->paginate(5);
+        
         return response()->json([
-            'success' => true
+            'success' => true,
+            'html' => view('todos.index', compact('todos'))
         ]);
     }
     /**

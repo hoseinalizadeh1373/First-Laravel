@@ -11,8 +11,7 @@
                 <!-- <i class="fas fa-plus fa-lg cursor-pointer"></i> -->
                     <h4 class="text-info">تسک ها</h4>
                     <a class="floating bg-info pe-auto user-select-none text-decoration-none d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">افزودن</a>            
-                <!-- </div> -->
-                <!-- href="{{route('todos.create')}}" -->
+                
 
             </div>
             
@@ -20,7 +19,7 @@
                 <!-- <div class="card-header">
                     تسک ها
                 </div> -->
-                <div class="card-body bg-dark">
+                <div class="card-body bg-dark" id="div">
                     <ul class="list-group-item bg-dark">
                         @foreach($todos as $item)
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-light my-2">
@@ -45,12 +44,11 @@
                     </ul>
                 </div>
             </div>
-            <hr>
+            
             <div class="d-flex justify-content-center">{{ $todos -> links()}}</div>
+            <hr class="d-block">
         </div>
-
-
-
+        
     </div>
 </div>
 @include('todos.create')
