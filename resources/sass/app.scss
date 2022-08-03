@@ -397,34 +397,32 @@
 .sshadow-good:hover{
     transform: perspective(3000px) rotateY(5deg);
 }
-.floating{
+.floating {
   
-    position:fixed;
-    width:60px;
-    height:60px;
-    left: 47%;
-    cursor : pointer;
-    bottom: 1%;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;
-    transition: all ease-in-out 400ms ;
-}
-.floating:hover{
-  color: orange;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  
+  background-color: #0C9;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  transition: all ease-in-out 400ms;
 }
 
+.floating:hover {
+  color: orange;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px white;
+}
 
 .slider {
-  cursor: pointer;
-  padding: 9px;
-  -webkit-transition: .4s;
-  transition: .4s;
-  background: whitesmoke;
+  
+  padding: 9px 15px;
+  width: 15px;
+  transition: 0.4s;
 }
-.slider:checked{
-background: purple;
+
+.slider:checked {
+  filter: hue-rotate(250deg);
 }

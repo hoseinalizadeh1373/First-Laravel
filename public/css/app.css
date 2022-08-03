@@ -10661,9 +10661,10 @@ textarea.form-control-lg {
   }
 }
 .sshadow-good {
+  margin-top: 20px;
   box-shadow: 0px 5px 12px 10px rgba(163, 160, 160, 0.507);
   transform: rotate3d(0, 0, 0, 0deg);
-  transform: perspective(1500px) rotateY(45deg);
+  transform: perspective(1500px) rotateY(5deg);
   border-radius: 1rem;
   transition: transform 1s ease 0s;
 }
@@ -10689,12 +10690,9 @@ textarea.form-control-lg {
 }
 
 .floating {
-  position: fixed;
   width: 60px;
   height: 60px;
-  left: 47%;
   cursor: pointer;
-  bottom: 1%;
   background-color: #0C9;
   color: #FFF;
   border-radius: 50px;
@@ -10705,16 +10703,15 @@ textarea.form-control-lg {
 
 .floating:hover {
   color: orange;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px white;
 }
 
 .slider {
-  cursor: pointer;
-  padding: 9px;
+  padding: 9px 15px;
+  width: 15px;
   transition: 0.4s;
-  background: whitesmoke;
 }
 
 .slider:checked {
-  background: purple;
+  filter: hue-rotate(250deg);
 }

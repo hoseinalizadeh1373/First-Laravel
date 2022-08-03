@@ -55,12 +55,12 @@ function createtodo(title_todo, desc_todo) {
         }).catch(function (error) {
             if (error.response) {
 
-                document.getElementById('error_create_title').innerHTML = error.response.data['errors']['title'] == "undefined" ?"":error.response.data['errors']['title'] ;
-                document.getElementById('error_create_desc').innerHTML = error.response.data['errors']['desc'] == "undefined" ?"":error.response.data['errors']['desc'];
-                
+                document.getElementById('error_create_title').innerHTML = error.response.data['errors']['title'] == "undefined" ? "" : error.response.data['errors']['title'];
+                document.getElementById('error_create_desc').innerHTML = error.response.data['errors']['desc'] == "undefined" ? "" : error.response.data['errors']['desc'];
+
                 console.log(error.response.data['errors'][0]);
             }
-            
+
         });
 }
 //todo_done
@@ -84,8 +84,7 @@ function donetodo(iddone, valuedone1) {
     })
         .then(function (response) {
             if (response.data) {
-                let element = document.getElementById('done_' + iddone);
-                element.innerHTML = response.data['result'];
+                
                 $('#done_' + iddone).data('done', valuedone1);
             }
         })
