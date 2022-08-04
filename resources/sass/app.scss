@@ -382,9 +382,11 @@
     to {top: 0; opacity: 1}
   }
   .sshadow-good{
+    margin-top: 15px;
+   
     box-shadow: 0px 5px 12px 10px rgba(163, 160, 160, 0.507);
     transform: rotate3d(0, 0, 0, 0deg);
-    transform: perspective(1500px) rotateY(45deg);
+    transform: perspective(768px) rotateY(5deg);
     border-radius: 1rem;
     transition: transform 1s ease 0s;
 }
@@ -395,7 +397,7 @@
     color: darkcyan;
 }
 .sshadow-good:hover{
-    transform: perspective(3000px) rotateY(5deg);
+    transform: perspective(768px) rotateY(0deg);
 }
 .floating {
   
@@ -417,7 +419,6 @@
 }
 
 .slider {
-  
   padding: 9px 15px;
   width: 15px;
   transition: 0.4s;

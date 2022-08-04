@@ -19,7 +19,7 @@
                 <!-- <div class="card-header">
                     تسک ها
                 </div> -->
-                <div class="card-body bg-dark" id="div">
+                <div class="card-body bg-dark" id='div'>
                     <ul class="list-group-item bg-dark">
                         @foreach($todos as $item)
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-light my-2">
@@ -45,8 +45,8 @@
                 </div>
             </div>
             
-            <div class="d-flex justify-content-center">{{ $todos -> links()}}</div>
-            <hr class="d-block">
+            <div class="d-flex justify-content-center" id="pagination2">{{ $todos -> links()}}</div>
+            <hr class='d-block'>
         </div>
         
     </div>

@@ -49,16 +49,40 @@ function createtodo(title_todo, desc_todo) {
 
     })
         .then(function (response) {
-            if (response.data['success'] === true) {
+
+            if (response.data) {
+
+                console.log(response.data['html']);
+                let index1 = response.data['html'].indexOf("id='div'");
+                let index2 = response.data['html'].indexOf("<hr class='d-block'>");
+
+                let a = index2 - index1;
+
+
+
+                let reshteh = response.data['html'].substr(index1 + 11, a);
+
+                console.log(reshteh);
+                document.getElementById('pagination2').remove();
+                document.getElementById('div').innerHTML = reshteh;
                 
+
+                let closecrate = document.getElementById("close_create");
+                closecrate.click();
             }
         }).catch(function (error) {
             if (error.response) {
 
-                document.getElementById('error_create_title').innerHTML = error.response.data['errors']['title'] == "undefined" ? "" : error.response.data['errors']['title'];
-                document.getElementById('error_create_desc').innerHTML = error.response.data['errors']['desc'] == "undefined" ? "" : error.response.data['errors']['desc'];
+                if(error.response.data['errors']['title']){
+                    document.getElementById('error_create_title').innerHTML = error.response.data['errors']['title'];
+                }
+                else{
+                    document.getElementById('error_create_desc').innerHTML = error.response.data['errors']['desc'] ;
+                }
+                
+                
 
-                console.log(error.response.data['errors'][0]);
+                console.log(error.response.data['errors']);
             }
 
         });

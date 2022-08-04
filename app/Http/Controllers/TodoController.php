@@ -101,7 +101,7 @@ class TodoController extends Controller
         
         return response()->json([
             'success' => true,
-            'html' => view('todos.index', compact('todos'))
+            'html' => view('todos.index', compact('todos'))->render()
         ]);
     }
     /**

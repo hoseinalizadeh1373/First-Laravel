@@ -38,7 +38,7 @@
             </div>
             <div class="d-flex justify-content-center"></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close_create">انصراف</button>
                 <button type="button" class="btn btn-primary createtodo">ايجاد</button>
             </div>
         </div>
