@@ -1,6 +1,10 @@
 require('./bootstrap');
 require("sweetalert");
-
+jQuery(function($) {
+    $('#exampleModal').on('shown.bs.modal', function() {
+        $('input[name="title"]').focus();
+    });
+});
 (function ($) {
     $(document).ready(function () {
         $('#search').on('keyup', function () {
@@ -68,6 +72,8 @@ function createtodo(title_todo, desc_todo) {
                 
 
                 let closecrate = document.getElementById("close_create");
+                $('#title').val("");
+                $('#desc').val("");
                 closecrate.click();
             }
         }).catch(function (error) {
@@ -258,7 +264,4 @@ var myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', function () {
     myInput.focus()
 })
-
-
-
 

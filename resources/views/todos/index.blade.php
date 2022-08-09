@@ -2,7 +2,7 @@
 @section('content')
 
 @include('layouts.search')
-<div class="container sshadow-good">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         
@@ -22,10 +22,11 @@
                 <div class="card-body bg-dark" id='div'>
                     <ul class="list-group-item bg-dark">
                         @foreach($todos as $item)
+                        <a href="{{ Route('todos.show',['todo'=>$item->id])}}" class="text-decoration-none text-dark fw-bold">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-light my-2">
-                            <!-- {{ $item->title }} -->  <a href="{{ Route('todos.show',['todo'=>$item->id])}}" class="text-decoration-none text-dark fw-bold">
+                            <!-- {{ $item->title }} -->  
                                 {{ $item->title }}
-                                </a>
+                              
                             <div class="d-flex justify-content-between align-items-center">
                               
                                 <!-- href="{{ Route('todos.done',['todo'=>$item->id])}}" -->
@@ -39,7 +40,7 @@
                                 </div>
                             </div>
                         </li>
-
+                        </a>
                         @endforeach
                     </ul>
                 </div>

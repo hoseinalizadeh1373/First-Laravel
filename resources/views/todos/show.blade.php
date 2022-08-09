@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,10 +14,10 @@
                 </div>
                 <hr>
                 <div class=" d-flex mr-5 mb-2">
-                <a href="{{ route('todos.edit',['todo' => $todo->id]) }}" class="btn btn-sm btn-warning">
+                <!-- href="{{ route('todos.edit',['todo' => $todo->id]) }}" -->
+                <a  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm btn-warning">
                     ویرایش
                 </a>
-
                 <form class="mr-2" action="{{ route('todos.destroy',['todo'=>$todo->id])}}" method="POST">
                 @csrf
                 @method('delete')
@@ -32,4 +33,5 @@
         </div>
     </div>
 </div>
+@include('todos.edit')
 @endsection

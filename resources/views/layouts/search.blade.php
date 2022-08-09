@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
     <div class="col-md-7">
         <input class="form-control w-100" id="search" type="search" placeholder="جستجو" aria-label="Search">
-        <div class="border rounded " >
+        <div class="border rounded text-warning" >
             <table><tbody id="tbody"></tbody></table>
         </div>
     </div>

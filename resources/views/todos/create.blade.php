@@ -10,7 +10,8 @@
                         @csrf -->
                     <div class="form-group">
                         <label for="title">عنوان</label>
-                        <input type="text" id="title" name="title" value="{{old('title')}}" class="form-control @error('title')form-control-invalid @enderror">
+                        <!-- value="{{old('title')}}" -->
+                        <input type="text" id="title" name="title"  class="form-control @error('title')form-control-invalid @enderror">
                         <!-- @error('title')
                         <p class="invalid-feedback d-block">
                             <strong>{{$message}}</strong>
@@ -22,7 +23,8 @@
                     </div>
                     <div class="form-group">
                         <label for="desc">توضیحات</label>
-                        <textarea id="desc" name="description" class="form-control @error('description')form-control-invalid @enderror">{{old('description')}}</textarea>
+                        <!-- {{old('description')}} -->
+                        <textarea id="desc" name="description" class="form-control @error('description')form-control-invalid @enderror"></textarea>
                         <!-- @error('description')
                         <p class="invalid-feedback d-block">
                             <strong>{{$message}}</strong>
