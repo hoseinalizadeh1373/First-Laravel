@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-@include('layouts.search')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,14 +16,13 @@
             </div>
             
             <div class="card">
-                <!-- <div class="card-header">
-                    تسک ها
-                </div> -->
-                <div class="card-body bg-dark" id='div'>
-                    <ul class="list-group-item bg-dark">
+              
+                <div class="card-body bg-secondary" id='div'>
+                @include('layouts.search')
+                    <ul class="list-group-item bg-secondary">
                         @foreach($todos as $item)
                         <a href="{{ Route('todos.show',['todo'=>$item->id])}}" class="text-decoration-none text-dark fw-bold">
-                        <li class="list-group-item d-flex justify-content-between align-items-center bg-light my-2">
+                        <li class="list-group-item  text-dark d-flex justify-content-between align-items-center bg-light my-2">
                             <!-- {{ $item->title }} -->  
                                 {{ $item->title }}
                               
@@ -46,7 +45,7 @@
                 </div>
             </div>
             
-            <div class="d-flex justify-content-center" id="pagination2">{{ $todos -> links()}}</div>
+            <div class="d-flex justify-content-center " id="pagination2">{{ $todos -> links()}}</div>
             <hr class='d-block'>
         </div>
         

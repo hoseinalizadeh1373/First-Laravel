@@ -54,7 +54,7 @@
 	</div>
 </div>
 
-<div class="d-flex justify-content-center mt-2  " id="pagination">{{ $list_user -> links()}}</div>
+<div class="d-flex justify-content-center mt-2 pagination " id="pagination">{{ $list_user -> links()}}</div>
 
 <hr class='d-block'>
 <div id="myModal2" class="modal2 ">

@@ -15,27 +15,27 @@
 
 </head>
 
-<body class="bg-dark">
+<body class="bg-light">
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex p-2  justify-content-sm-start bg-dark">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex p-2  justify-content-sm-start ">
+    <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active border rounded border-info mx-2 ">
-          <a class="nav-link text-light" href="{{Route('todos.index')}}">صفحه اصلی <span class="sr-only">(current)</span></a>
+        <li class="nav-item active border rounded border-light mx-2 ">
+          <a class="nav-link text-dark" href="{{Route('todos.index')}}">صفحه اصلی <span class="sr-only">(current)</span></a>
         </li>
         @can('update',Auth::user())
-        <li class="nav-item border rounded border-info mx-2">
-          <a class="nav-link text-light" href="{{Route('users.index')}}">کاربران</a>
+        <li class="nav-item border rounded border-light mx-2">
+          <a class="nav-link text-dark" href="{{Route('users.index')}}">کاربران</a>
         </li>
         @endcan
-        <li class="nav-item border rounded border-info mx-2">
-          <a class="nav-link text-light" href="#">درباره ما</a>
+        <li class="nav-item border rounded border-light mx-2">
+          <a class="nav-link text-dark" href="#">درباره ما</a>
         </li>
       </ul>
 
@@ -44,16 +44,16 @@
       <!-- Authentication Links -->
       @guest
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('login') }}">{{ __('ورود') }}</a>
+        <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('ورود') }}</a>
       </li>
       @if (Route::has('register'))
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('register') }}">{{ __('عضویت') }}</a>
+        <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('عضویت') }}</a>
       </li>
       @endif
       @else
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-warning btn btn-outline rounded border-dark px-2 text-center bg-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{ Auth::user()->name }} <span class="caret "></span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -69,5 +69,5 @@
       </li>
       @endguest
     </ul>
-
+    </div>
   </nav>

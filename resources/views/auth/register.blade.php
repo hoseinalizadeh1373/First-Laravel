@@ -3,8 +3,8 @@
 @section('content')
 
 <section class="vh-90 my-2  ">
-    <div class="mask d-flex align-items-center h-100 ">
-        <div class="container h-100">
+    <div class="mask d-flex align-items-center h-90 ">
+        <div class="container h-90">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-8 col-md-9 col-lg-9 col-xl-10 ">
 

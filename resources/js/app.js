@@ -18,8 +18,10 @@ jQuery(function($) {
                     'search': $value
                 },
                 success: function (data) {
+                    
                     $('#tbody').html(data);
                     if (data != "") {
+                        
                         $('.div').addClass("todown");
                     }
                 },

@@ -188,9 +188,11 @@ class TodoController extends Controller
                     ->orWhere('title', 'LIKE', '%' . $request->search . '%')->get();
                 if ($result) {
                     foreach ($result as $item) {
+                        
+                        $e =substr($item->title,0,3);
                         $output .= "<tr>" .
-                            '<td>' . $item->title . "</td>" .
-                            '<td>' . $item->description . "</td>" .
+                            '<td>' .  $e . "</td>" .
+                            '<td>' . substr($item->description,0,10) . '...' . "</td>" .
                             '</tr>';
                     }
                     return response($output);
