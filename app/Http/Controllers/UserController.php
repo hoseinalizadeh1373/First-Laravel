@@ -66,6 +66,8 @@ class UserController extends Controller
     public function create()
     {
         dd(Todo::all());
+        // $e = mb_substr('سلام بر',0,3);
+        // dd($e);
     }
 
     /**

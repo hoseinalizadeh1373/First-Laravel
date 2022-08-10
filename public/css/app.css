@@ -10750,3 +10750,12 @@ textarea.form-control-lg {
   background: khaki;
   border-radius: 50%;
 }
+
+.odd tr:nth-child(even) {
+  background: whitesmoke;
+  width: 100%;
+}
+
+.odd tr:nth-child(odd) {
+  background: gainsboro;
+}

@@ -20,9 +20,13 @@ jQuery(function($) {
                 success: function (data) {
                     
                     $('#tbody').html(data);
-                    if (data != "") {
-                        
+                    if (data != "") {                 
                         $('.div').addClass("todown");
+                        document.getElementById('container-search').classList.add('d-block');
+                        document.getElementById('container-search').classList.remove('d-none');
+                    }else{
+                        document.getElementById('container-search').classList.add('d-none');
+                        document.getElementById('container-search').classList.remove('d-block');
                     }
                 },
                 error: function (xhr, status, error) {
