@@ -191,8 +191,8 @@ class TodoController extends Controller
                         
                         
                         $output .= "<tr >" .
-                            '<td >' .  mb_substr($item->title,0,strlen($item->title)-5)."..." . "</td>" .
-                            '<td >' . mb_substr($item->description,0,10) . '...' . "</td>" .
+                            '<td > '.'<a href="'.route('todos.show',$item->id).'" class="text-decoration-none text-dark">' .  mb_substr($item->title,0,strlen($item->title)-5)."..." .'</a>'. "</td>" .
+                            '<td >' .'<a href="'.route('todos.show',$item->id).'" class="text-decoration-none text-dark">' . mb_substr($item->description,0,10) . '...' .'</a>'. "</td>" .
                             '</tr>';
                     }
                     return response($output);

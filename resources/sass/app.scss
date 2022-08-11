@@ -499,20 +499,21 @@
 
 
 
-.page-item>a,
-.page-item>span {
+.page-item > a,
+.page-item > span {
   display: inline-block;
   color: rebeccapurple;
-  background: #b6d4fe;
+  background: white;
   border-radius: 50px;
 }
 
-.page-item:first-child>a,
-.page-item:last-child>a {
-  background: khaki;
+.page-item:first-child > a,
+.page-item:last-child > a {
+  background: white;
   border-radius: 50%;
-  
+  transform: rotate(0);
 }
+
 .odd  tr:nth-child(even)
  {background: whitesmoke;
   width: 100%;

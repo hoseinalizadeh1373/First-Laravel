@@ -9,7 +9,7 @@
             <div class="d-flex justify-content-between my-3 align-items-center">
                 <!-- <div class="col-md-12 text-center .text-decoration-none"> -->
                 <!-- <i class="fas fa-plus fa-lg cursor-pointer"></i> -->
-                    <h4 class="text-info">تسک ها</h4>
+                    <h4 class="text-info">مدیریت وظایف ایجاد شده</h4>
                     <a class="floating bg-info pe-auto user-select-none text-decoration-none d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">افزودن</a>            
                 
 
@@ -44,7 +44,9 @@
                     </ul>
                 </div>
             </div>
-            
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <!-- button for new , spreadsheet s -->
+            </div>
             <div class="d-flex justify-content-center " id="pagination2">{{ $todos -> links()}}</div>
             <hr class='d-block'>
         </div>
