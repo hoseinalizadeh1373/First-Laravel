@@ -49,9 +49,12 @@
             </div>
             <div class="d-flex justify-content-center " id="pagination2">{{ $todos -> links()}}</div>
             <hr class='d-block'>
+            <a href="{{route('todos.done',['todo'=>'2'])}}">dadsa</a>
         </div>
         
     </div>
 </div>
 @include('todos.create')
+
+<x-post-card names="home-library" href="todos.done,['todo'=>'2']-todos.create"/>
 @endsection
