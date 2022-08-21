@@ -7,9 +7,10 @@
         @endif
         @if( str_contains($href[$i],','))
        @php  $t = mb_split(',',$href[$i]);
-       $td= "'$t[0]','$t[1]'";
+       $td= "'todos.done',['todo'=>'2']";
        @endphp
-        <li class="breadcrumb-item "><a href="{{route($href[$i])}}">{{$names[$i]}}</a></li>
+       {{$td}}
+        <li class="breadcrumb-item "><a href="{{route('todos.done',['todo'=>'2'])}}" >{{$names[$i]}}</a></li>
         @endif
         @endfor 
         <!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
